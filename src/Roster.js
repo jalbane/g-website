@@ -18,7 +18,6 @@ class Roster extends Component{
 			display: 'block',
 			border: 'solid 2px black'
 		}
-	
 		var pic = {
 			width: '14%',
 			height: '82px',
