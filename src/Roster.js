@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './roster.css'
 
 
 class Roster extends Component{
@@ -14,8 +15,8 @@ class Roster extends Component{
 		this.props.itemList.key++
 
 		return (
-				<div className = "row">
-					<span className = 'cell' ><a id = "redirect" href = {`https://raider.io/character/us/lightbringer/${this.props.itemList.raider[index].character.name}`} target = "_blank" ><img src = {`https://render-us.worldofwarcraft.com/character/${this.props.itemList.raider[index].character.thumbnail}`} alt = "char_thumbnail"/></a></span>
+				<div id = "row">
+					<span className = 'cell' ><a id = "redirect" href = {`https://raider.io/character/us/lightbringer/${this.props.itemList.raider[index].character.name}`} target = "_blank" rel="noopener noreferrer" ><img src = {`https://render-us.worldofwarcraft.com/character/${this.props.itemList.raider[index].character.thumbnail}`} alt = "char_thumbnail"/></a></span>
 					<span className = 'cell' >{this.props.itemList.raider[index].character.name} </span>
 					<span className = 'cell' >{this.props.itemList.raider[index].character.spec.name} </span>
 					<span className = 'cell' >{spec} </span>

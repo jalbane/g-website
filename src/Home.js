@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, BrowserRouter, Route} from 'react-router-dom';
+import {Link, BrowserRouter, Switch, Route} from 'react-router-dom';
 import App from './App';
 
 class Home extends Component{
@@ -10,17 +10,17 @@ class Home extends Component{
 				<nav>
 					<ul>
 						<li>
-							<Link to="/">Home</Link>
+							<Link to="">Home</Link>
 						</li>
 						<li>
-							<Link to="/roster">Roster</Link>
+							<Link to="/App">Roster</Link>
 						</li>
 					</ul>
 		        </nav>
-		 		<Route
-		 			path="/"
-                    component={Home}
-                    /> 
+		 		<Switch>
+			 		<Route path="/Home" component={Home} exact/> 
+			 		<Route path="/App" component={App} exact/> 
+                </Switch>
 	    	</div>
 		</BrowserRouter>
     );

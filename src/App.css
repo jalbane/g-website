@@ -1,5 +1,7 @@
 .App {  
   text-align: center;
+  z-index: -1;
+  background-color: rgba(208, 0, 0, 0.76);
 }
 
 .App-logo {
@@ -22,10 +24,13 @@
 }
 
 .Faketable{
-
+  margin: auto;
   border: solid 2px black;
   box-shadow: 0px 0px 15px rgba(0,0,0,1);
-  width: 30%;
-  margin: auto;
+  width: 35%;
+  min-width: 35%;
   display: table;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
 }

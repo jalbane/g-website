@@ -9,6 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 
 
+
 class App extends Component{
   constructor(props){
     super(props)
@@ -53,13 +54,13 @@ class App extends Component{
   render(){ 
     let item = this.state
     return (
-      <div>
+      <div className="App">
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="Rankings.js">Home</Nav.Link>
+              <Nav.Link href="/Home">Home</Nav.Link>
               <Nav.Link href="Roster.js">Roster</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -71,9 +72,10 @@ class App extends Component{
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      <div className="App">
+      <div >
+          <div className = "Faketable"> 
           {this.state.loading ? <div><h1>Loading...</h1></div>: 
-            <div className = "Faketable"> 
+            <div>
               {/* this div is part of the ternary operator*/}
               <Roster itemList = {item}/>
               <Roster itemList = {item}/>
@@ -105,7 +107,8 @@ class App extends Component{
               <Roster itemList = {item}/>
               <Roster itemList = {item}/>
             </div>
-          } 
+          }
+          </div> 
       </div> 
     </div>);
   }
