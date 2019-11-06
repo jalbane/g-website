@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import Roster from './Roster'
 import './App.css';
 import 'tachyons';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
+
 
 class App extends Component{
   constructor(props){
@@ -47,10 +53,27 @@ class App extends Component{
   render(){ 
     let item = this.state
     return (
+      <div>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="Rankings.js">Home</Nav.Link>
+              <Nav.Link href="Roster.js">Roster</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       <div className="App">
-        <div>
           {this.state.loading ? <div><h1>Loading...</h1></div>: 
-            <div> 
+            <div className = "Faketable"> 
               {/* this div is part of the ternary operator*/}
               <Roster itemList = {item}/>
               <Roster itemList = {item}/>
@@ -82,9 +105,9 @@ class App extends Component{
               <Roster itemList = {item}/>
               <Roster itemList = {item}/>
             </div>
-          }
-        </div>  
-      </div>);
+          } 
+      </div> 
+    </div>);
   }
 }
 export default App;

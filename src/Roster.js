@@ -1,42 +1,25 @@
 import React, {Component} from 'react';
-import roster from './roster.css';
+
 
 class Roster extends Component{
 	render(){
-		var styles ={
-			textAlign: 'center',
-			verticalAlign: 'left',
-			backgroundColor: 'lightgray',
-			display: 'table-cell',
-			margin: 'auto',
-			width: '25%'
-		}
-		var container = {
-			margin: 'auto',
-			width: '30%',
-			backgroundColor: 'gray',
-			display: 'block',
-			border: 'solid 2px black'
-		}
-		var pic = {
-			width: '14%',
-			height: '82px',
-			display: 'table-cell',
-			backgroundColor: 'lightgray'
-		}
-		var link ={
-			height: '20px',
-			width: '20px'
-		}
+		let index = this.props.itemList.key
+		let spec 
+		if (this.props.itemList.raider[index].character.spec.role === 'TANK')
+			spec = 'Tank'		
+		else if (this.props.itemList.raider[index].character.spec.role === 'HEALING')
+			spec = 'Healer'
+		else if (this.props.itemList.raider[index].character.spec.role === 'DPS')
+			spec = 'Dps'
+		this.props.itemList.key++
+
 		return (
-			<div className = "container" style = {container}>
 				<div className = "row">
-					<div className = 'picCell' style = {pic}><a id = "redirect" href = {`https://raider.io/character/us/lightbringer/${this.props.itemList.raider[this.props.itemList.key].character.name}`} target = "_blank" style = {link}><img src = {`https://render-us.worldofwarcraft.com/character/${this.props.itemList.raider[this.props.itemList.key].character.thumbnail}`} alt = "char_thumbnail"/></a></div>
-					<div className = 'cell' style = {styles}>{this.props.itemList.raider[this.props.itemList.key].character.name} </div>
-					<div className = 'cell' style = {styles}>{this.props.itemList.raider[this.props.itemList.key].character.spec.name} </div>
-					<div className = 'cell' style = {styles}>{this.props.itemList.raider[this.props.itemList.key++].character.spec.role} </div>
+					<span className = 'cell' ><a id = "redirect" href = {`https://raider.io/character/us/lightbringer/${this.props.itemList.raider[index].character.name}`} target = "_blank" ><img src = {`https://render-us.worldofwarcraft.com/character/${this.props.itemList.raider[index].character.thumbnail}`} alt = "char_thumbnail"/></a></span>
+					<span className = 'cell' >{this.props.itemList.raider[index].character.name} </span>
+					<span className = 'cell' >{this.props.itemList.raider[index].character.spec.name} </span>
+					<span className = 'cell' >{spec} </span>
 				</div>
-			</div>
 			);
 	}
 }

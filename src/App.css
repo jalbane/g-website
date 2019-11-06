@@ -1,6 +1,5 @@
-.App {
+.App {  
   text-align: center;
-  padding: 20px 0px;
 }
 
 .App-logo {
@@ -20,4 +19,13 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.Faketable{
+
+  border: solid 2px black;
+  box-shadow: 0px 0px 15px rgba(0,0,0,1);
+  width: 30%;
+  margin: auto;
+  display: table;
 }
