@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Link, HashRouter, Switch, Route} from 'react-router-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from 'react-bootstrap/Navbar'
@@ -58,7 +58,7 @@ class Home extends Component{
 	item = this.state
 	return(
 		
-		<BrowserRouter>
+		<HashRouter>
 			<Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -82,7 +82,7 @@ class Home extends Component{
 			 		<Route path="/App" component={App} exact/> 
                 </Switch>
                 <Rankings data = {item} />
-		</BrowserRouter>
+		</HashRouter>
     );
 	}
 }
