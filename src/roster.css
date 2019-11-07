@@ -6,14 +6,17 @@
 }
 
 #row:nth-of-type(even) {
-background-color:#d8d8d8;
+	background-color:#d8d8d8;
 }
 
 .cell{
+	margin: auto;
+	margin-left: 0%;
 	width: 22%;
 	display: table-cell;
 	vertical-align: middle;
 }
+
 
 img{
 	vertical-align: bottom;

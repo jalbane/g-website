@@ -32,13 +32,10 @@ class Home extends Component{
           </Navbar.Collapse>
         </Navbar>
 		 		<Switch>
-
 			 		<Route path = "/Rankings.js" component = {Rankings} exact />
 			 		<Route path="/App.js" component={App} exact/> 
                 </Switch>
-              
 		</HashRouter>  
-		
 		</div>
     );
 	}

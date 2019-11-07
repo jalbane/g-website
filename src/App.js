@@ -7,6 +7,9 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
+
+
+
 class App extends Component{
   constructor(props){
     super(props)
@@ -52,9 +55,6 @@ class App extends Component{
     let item = this.state
     return (
       <div className="App">
-        
-      <div >
-        Hello world
           <div className = "Faketable"> 
           {this.state.loading ? <div><h1>Loading...</h1></div>: 
             <div>
@@ -91,7 +91,6 @@ class App extends Component{
             </div>
           }
           </div> 
-      </div> 
     </div>);
   }
 }
