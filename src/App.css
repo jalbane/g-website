@@ -2,6 +2,11 @@
   text-align: center;
   z-index: -1;
   background-color: rgba(208, 0, 0, 0.76);
+  padding: .1px 0px;
+  /* why is a non-zero padding value fixing 
+    a gap in the bg-color between navbar
+    and table?
+  */
 }
 
 .App-logo {
