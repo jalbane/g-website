@@ -1,0 +1,12 @@
+
+.rankings-cell{
+	margin: auto;
+	display: table-cell;
+	padding: 20px;
+}
+
+.rankings-container{
+	width: 30%;
+	margin: auto;
+	background-color: white;
+}
