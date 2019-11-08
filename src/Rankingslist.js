@@ -5,7 +5,7 @@ class Rankingslist extends React.Component{
 	render(){
 		
 		return (
-			<div>
+			<div className = 'rankings-row'>
 				<span className ='rankings-cell'>  </span>
 	    		<span className ='rankings-cell'> {this.props.raidSummary.summary} </span>
 	    		<span className ='rankings-cell'> {this.props.raidSummary.realm} </span>

@@ -6,7 +6,13 @@
 }
 
 .rankings-container{
-	width: 30%;
+	width: 100%;
 	margin: auto;
-	background-color: white;
+	background-color: none;
+}
+
+.rankings-row{
+	width: 15%;
+	margin: auto;
+	background-color: whitesmoke;
 }

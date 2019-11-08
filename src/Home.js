@@ -12,7 +12,7 @@ class Home extends Component{
 
 	render(){
 	return(
-		<div>
+		<div style = {{}}>
 		<HashRouter>	<Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
