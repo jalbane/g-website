@@ -44,7 +44,7 @@ class Rankings extends React.Component{
 	}
 
 	fillRankings(name, longName, data, dataRankings){
-		if (name == 'cos'){
+		if (name === 'cos'){
 			this.setState( { [name]: 
 						{
 							summary: data.raid_progression[longName].summary,
@@ -66,7 +66,6 @@ class Rankings extends React.Component{
 
 	render(){
 	let data = this.state
-	let num = data.length
 	return (
 			<div className = 'rankings-container'>
 	    		<Rankingslist raidSummary = {data.uldir} />
