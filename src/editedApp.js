@@ -31,11 +31,7 @@ class editedApp extends Component{
     await fetch(url)
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
-   
-
-
     this.setState({loading: false})
-
   }
 
   render(){ 
@@ -44,6 +40,7 @@ class editedApp extends Component{
     let newArr = updatedArr.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
+              spec = {item.character.spec}
       />)
     
     return (

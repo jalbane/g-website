@@ -4,7 +4,24 @@ import './roster.css'
 
 class Roster extends Component{
 	render(){
-		console.log(this.props)
+
+		let Specialization
+		let roleHandler
+		try {
+			Specialization = (this.props.spec.name)
+		} 
+		catch (error){
+			if (error instanceof TypeError)
+				  Specialization = `Error`
+		}	
+
+		try {
+			roleHandler = (this.props.spec.role)
+		} 
+		catch (error){
+			if (error instanceof TypeError)
+				roleHandler = 'garbage'
+		}
 		return (
 				<div id = "row">
 					<span className = 'cell' > 
@@ -12,8 +29,11 @@ class Roster extends Component{
 							<img src = {`https://render-us.worldofwarcraft.com/character/${this.props.tnail}`} alt = '' /> 
 						</a> 
 					</span>
-					<span className = 'cell' > {this.props.name}</span>	
-					<span className = 'cell' > {this.props.spec}</span>	
+					<span className = 'cell' > {this.props.name}</span>
+					<span className = 'cell' > {Specialization}</span>	
+					<span className = 'cell' > {roleHandler}</span>
+	
+						
 					
 
 				
