@@ -1,10 +1,12 @@
 
 .rankings-container{
-	width: 30%;
-	margin: auto;
-	z-index: 1;
+	
+	width: 50%;
+	display: block;height: 1920px;background-color: rgba(208, 0, 0, .76);margin: auto;
 }
 
-html{
-	z-index: -1;
+.rankings-page{
+	width: 100%;
+	
+	
 }

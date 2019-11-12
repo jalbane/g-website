@@ -2,17 +2,13 @@
 .rankings-cell{
 	margin: auto;
 	display: table-cell;
-	padding: 20px;
-}
-
-.rankings-container{
-	width: 100%;
-	margin: auto;
-	background-color: none;
+	width: 25%;
+	justify-content: center;
 }
 
 .rankings-row{
-	width: 15%;
+
+	display: table-row;
 	margin: auto;
 	background-color: whitesmoke;
 }

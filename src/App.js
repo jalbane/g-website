@@ -27,9 +27,9 @@ class App extends Component{
               }
             })
     let data = await response.json()
-    this.setState({blizzResponse: data})
+    this.setState({blizzResponse: data.access_token})
     let url = 'https://us.api.blizzard.com/wow/guild/Lightbringer/NFA?fields=members&locale=en_US&access_token='
-    url += this.state.blizzResponse.access_token
+    url += this.state.blizzResponse
     let apiResponse = await fetch(url)
     let guildData = await apiResponse.json()
     let i = 0
