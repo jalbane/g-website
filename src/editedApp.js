@@ -44,7 +44,6 @@ class editedApp extends Component{
     let newArr = updatedArr.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
-              spec = {JSON.stringify(item.character.spec)}  
       />)
     
     return (
