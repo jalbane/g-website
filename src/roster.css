@@ -9,21 +9,13 @@
 	background-color:#d8d8d8;
 }
 
-.cell{
-	margin: auto;
-	margin-left: 0%;
-	width: 22%;
-	display: table-cell;
-	vertical-align: middle;
-}
 
 img{
-	vertical-align: bottom;
 	margin-left: -60px;
 	max-width: 100%;
+
 }
 
 img:hover {
 	transform: translateX(2px);
-	
 }
