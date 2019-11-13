@@ -70,13 +70,19 @@ class Rankings extends React.Component{
 	render(){
 	let data = this.state
 	return (
-			<div className = 'rankings-container'>
-			
-	    		<Rankingslist raidSummary = {data.uldir} />
-	    		<Rankingslist raidSummary = {data.bod} />
-	    		<Rankingslist raidSummary = {data.cos} />
-	    		<Rankingslist raidSummary = {data.tep} />
-	    
+			<div className = 'rankings-page'> 
+				<div className = 'rankings-container'>
+					<div className = 'rankings-row'>
+						<span className ='rankings-cell'> <h4> Raid Name </h4></span>
+		    			<span className ='rankings-cell'> <h4> Progress </h4> </span>
+		    			<span className ='rankings-cell'> <h4> Realm Ranking </h4> </span>
+		    			<span className ='rankings-cell'> <h4> World Ranking </h4> </span>
+	    			</div>
+		    		<Rankingslist raidSummary = {data.uldir} />
+		    		<Rankingslist raidSummary = {data.bod} />
+		    		<Rankingslist raidSummary = {data.cos} />
+		    		<Rankingslist raidSummary = {data.tep} />
+				</div>
 			</div>
 		);
 	}
