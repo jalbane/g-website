@@ -16,11 +16,17 @@ class Roster extends Component{
 		}	
 
 		try {
-			roleHandler = (this.props.spec.role)
+			roleHandler = this.props.spec.role
+			if (this.props.spec.role === 'HEALING')
+				roleHandler = 'Healer'
+			else if (this.props.spec.role === 'DPS')
+				roleHandler = 'Damage'
+			else 
+				roleHandler = 'Tank'
 		} 
 		catch (error){
 			if (error instanceof TypeError)
-				roleHandler = 'garbage'
+				roleHandler = 'Error'
 		}
 		return (
 				<div id = "row">
@@ -32,12 +38,6 @@ class Roster extends Component{
 					<span className = 'cell' > {this.props.name}</span>
 					<span className = 'cell' > {Specialization}</span>	
 					<span className = 'cell' > {roleHandler}</span>
-	
-						
-					
-
-				
-
 				</div>
 			);
 	}
