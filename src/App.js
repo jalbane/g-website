@@ -51,7 +51,7 @@ class App extends Component{
     return (
       
       <div className="App">
-       
+      <div className = "bg-gradient"> 
           <div className = "Faketable"> 
           {this.state.loading ? <div><h1>Loading...</h1></div>: 
             <div>
@@ -87,6 +87,7 @@ class App extends Component{
               <Roster itemList = {item}/>
             </div>
           }
+        </div>
         </div> 
       {console.log(this.state.loading)}
     </div>);
