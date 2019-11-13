@@ -31,11 +31,52 @@
 .Faketable{
   margin: auto;
   border: solid 2px black;
-  box-shadow: 0px 0px 15px rgba(0,0,0,1);
-  width: 35%;
+  box-shadow: 0px 10px 15px rgba(0,0,0,1);
   min-width: 35%;
   display: table;
-  margin-top: 20px;
   margin-bottom: 20px;
   background-color: white;
+}
+
+.row {
+  min-width: 100%;
+  display: table-row;
+  flex-wrap: wrap;
+}
+
+.cell{
+  margin: auto;
+  margin-left: 0%;
+  min-width: 22%;
+  display: table-cell;
+  text-align: center;
+}
+
+.header-cell{
+  width: 25%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.space-padding{
+
+}
+
+.header-row {
+  margin: auto ;
+  width: 100%;
+  display: table-row;
+}
+
+.row-container{
+  min-height: 40px;
+  margin: auto;
+  margin-top: 20px;
+  border: solid 2px black;
+  box-shadow: 0px 5px 15px rgba(0,0,0,1);
+  min-width: 35%;
+  display: table;
+  background-color: white;
+  border-bottom-style: none;
 }
