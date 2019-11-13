@@ -3,12 +3,21 @@
 	margin: auto;
 	display: table-cell;
 	width: 25%;
-	justify-content: center;
+	vertical-align: middle;
+	text-align: center;	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: black; 
 }
 
 .rankings-row{
-
+	width: 100%;
 	display: table-row;
 	margin: auto;
-	background-color: whitesmoke;
+	background-color: white;
+
+}
+
+.rankings-row:nth-of-type(even) {
+	background-color:#d8d8d8;
 }
