@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Roster from './Roster'
-import './App.css';
+import './editedApp.css';
 import 'tachyons';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -60,11 +60,9 @@ class editedApp extends Component{
 
               {/* this div is part of the ternary operator*/}
               {newArr}
-
             </div>
           }
         </div> 
-      
     </div>);
   }
 }
