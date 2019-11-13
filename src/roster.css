@@ -19,3 +19,44 @@ img{
 img:hover {
 	transform: translateX(2px);
 }
+
+@media (max-width: 800px) {
+	img{
+		margin-left: 0px;
+		width: 50%;
+	}
+  
+}
+
+@media (max-width: 360px) {
+	img{
+		margin-left: 0px;
+		width: 50%;
+	}
+  
+}
+
+@media (max-width: 300px) {
+	img{
+		margin-left: 0px;
+		width: 20%;
+	}
+  
+}
+
+
+@media (max-width: 400px) {
+	img{
+		margin-left: 0px;
+		width: 60%;
+	}
+  
+}
+
+@media (max-width: 1200px) {
+	img{
+		margin-left: 0px;
+		width: 50%;
+	}
+  
+}

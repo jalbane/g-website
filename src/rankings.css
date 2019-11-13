@@ -12,7 +12,8 @@
 .rankings-page{
 	height: 1260px;
 	background-image: url('https://images5.alphacoders.com/881/thumb-1920-881376.jpg');
-	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: black;
 }
 
 .rankings-cell{
@@ -24,4 +25,92 @@
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: black; 
+}
+
+@media (max-width: 440px) {
+	h4{
+		font-size: 1.25em;
+	}
+	.rankings-container{
+		margin: auto;
+		width: 75%;
+		height: 35%;
+		padding: 100px 0px;
+		display: table;
+		background-color: none;
+		position: relative;
+	}
+}
+
+@media (max-width: 330px) {
+	h4{
+		font-size: 1em;
+	}
+	.rankings-container{
+		margin: auto;
+		width: 75%;
+		height: 35%;
+		padding: 100px 0px;
+		display: table;
+		background-color: none;
+		position: relative;
+	}	
+}
+
+@media (max-width: 620px) {
+	h4{
+		font-size: 1.25em;
+	}
+
+	.rankings-container{
+		margin: auto;
+		width: 75%;
+		height: 35%;
+		padding: 100px 0px;
+		display: table;
+		background-color: none;
+		position: relative;
+	}
+}
+
+@media (max-width: 850px) {
+	h4{
+		font-size: 1.125em;
+	}
+
+	.rankings-container{
+		margin: auto;
+		width: 75%;
+		height: 42%;
+		padding: 100px 0px;
+		display: table;
+		background-color: none;
+		position: relative;
+	}
+}
+
+@media (max-width: 1050px) {
+	h4{
+		font-size: 1.5em;
+	}
+
+	.rankings-container{
+		margin: auto;
+		width: 75%;
+		height: 50%;
+		padding: 100px 0px;
+		display: table;
+		background-color: none;
+		position: relative;
+	}
+	.rankings-cell{
+		margin: auto;
+		display: table-cell;
+		width: 25%;
+		vertical-align: middle;
+		text-align: center;	
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: black; 
+}
 }
