@@ -46,23 +46,13 @@ class editedApp extends Component{
     return (
       
       <div className="App">
-        <div class = 'row-container'>
-          <div class = "header-row">
-            <span className = 'space-padding'>  </span>
-            <div className = 'header-cell'> Name </div>
-            <div className = 'header-cell'> Specialization </div>  
-            <div className = 'header-cell'> Role </div>
-          </div>
-        </div>
-          <div className = "Faketable"> 
-          {this.state.loading ? <div><h1>Loading...</h1></div>: 
-            <div>
+          {this.state.loading ? <div className = 'loading-banner'><h1>Loading...</h1></div>: 
+            <div >
 
               {/* this div is part of the ternary operator*/}
               {newArr}
             </div>
           }
-        </div> 
     </div>);
   }
 }

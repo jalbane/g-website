@@ -51,8 +51,8 @@ class App extends Component{
     return (
       
       <div className="App">
-      <div className = "bg-gradient"> 
-          <div className = "Faketable"> 
+      <div > 
+          <div > 
           {this.state.loading ? <div><h1>Loading...</h1></div>: 
             <div>
               {/* this div is part of the ternary operator*/}

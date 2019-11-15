@@ -36,7 +36,12 @@
   min-width: 35%;
   display: table;
   margin-bottom: 20px;
+}
+
+.loading-banner{
   background-color: white;
+  color: black;
+  height: 100px;
 }
 
 .row {

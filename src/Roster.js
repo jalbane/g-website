@@ -29,15 +29,15 @@ class Roster extends Component{
 				roleHandler = 'Error'
 		}
 		return (
-				<div id = "row">
-					<span className = 'cell' > 
+				<div className = 'character-container'>
+					<span > 
 						<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
 							<img src = {`https://render-us.worldofwarcraft.com/character/${this.props.tnail}`} alt = '' /> 
 						</a> 
 					</span>
-					<span className = 'cell' > {this.props.name}</span>
-					<span className = 'cell' > {Specialization}</span>	
-					<span className = 'cell' > {roleHandler}</span>
+					<span > <strong> {this.props.name} </strong> </span>
+					<span > {Specialization}</span>	
+					<span > {roleHandler}</span>
 				</div>
 			);
 	}

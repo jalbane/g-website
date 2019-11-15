@@ -9,15 +9,37 @@
 	background-color:#d8d8d8;
 }
 
+.character-container{
+	display: inline-block;
+	margin: 60px 30px 30px 30px;
+	height: 220px;
+	width: 160px;
+	color: black;
+	font-size: 1.12em;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px;
+}
+
+.character-container:hover{
+	transform: scale(1.05);
+	transition: ease 200ms;
+}
 
 img{
-	margin-left: -60px;
+	margin: 5px 0px 5px 0px;
 	max-width: 100%;
+	filter: brightness(.75);
+}
 
+span{
+	display: block;
 }
 
 img:hover {
-	transform: translateX(2px);
+	transition: ease 500ms;
+	filter: brightness(1);
+	transform: scale(1.1);
 }
 
 @media (max-width: 800px) {
