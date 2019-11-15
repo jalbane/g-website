@@ -30,11 +30,11 @@ class Roster extends Component{
 		}
 		return (
 				<div className = 'character-container'>
-					<span > 
+					<div className = 'img-container'> 
 						<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<img src = {`https://render-us.worldofwarcraft.com/character/${this.props.tnail}`} alt = '' /> 
+							<img className = 'character-img' src = {`https://render-us.worldofwarcraft.com/character/${this.props.tnail}`} alt = '' /> 
 						</a> 
-					</span>
+					</div>
 					<span > <strong> {this.props.name} </strong> </span>
 					<span > {Specialization}</span>	
 					<span > {roleHandler}</span>
