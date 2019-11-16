@@ -34,6 +34,9 @@ class App extends Component{
     let guildData = await apiResponse.json()
     let i = 0
     let j = 0
+
+    /*----  This file is no longer in use   -----*/
+    /*	loops were replaced by array.map	*/
     while (i < guildData.members.length){
       if (guildData.members[i].rank !== 2 && guildData.members[i].rank < 5)
       {
