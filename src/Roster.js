@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './roster.css'
 
-
 class Roster extends Component{
 	render(){
 
@@ -19,9 +18,9 @@ class Roster extends Component{
 			if (this.props.spec.role === 'HEALING')
 				roleImgSrc = 'uiHealer.png'
 			else if (this.props.spec.role === 'DPS')
-				roleImgSrc = 'uiDps.png'
+				roleImgSrc = 'uiDps.PNG'
 			else 
-				roleImgSrc = 'uiTank.png'
+				roleImgSrc = 'uiTank.PNG'
 		} 
 		catch (error){
 			if (error instanceof TypeError)
