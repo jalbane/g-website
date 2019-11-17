@@ -31,7 +31,7 @@ class editedApp extends Component{
     await fetch(url)
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
-    this.setState({loading: false})
+    this.setState({loading: false})    
   }
 
   render(){ 
@@ -41,8 +41,8 @@ class editedApp extends Component{
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
               spec = {item.character.spec}
+              class = {item.character.class}
       />)
-    
     return (
       
       <div className="App">
