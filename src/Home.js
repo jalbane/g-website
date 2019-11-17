@@ -20,8 +20,8 @@ class Home extends Component{
 	return(
 		<HashRouter history="browserHistory">	     
       
-        <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'min-height': '120px', 'font-size': '24px', 'width': '100%'}}>
-          <Navbar.Brand href="" style = {{'font-size': '24px'}}>NFA</Navbar.Brand>
+        <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'minHeight': '120px', 'fontSize': '24px', 'width': '100%'}}>
+          <Navbar.Brand href="" style = {{'fontSize': '24px'}}>NFA</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
