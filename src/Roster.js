@@ -6,7 +6,7 @@ class Roster extends Component{
 	render(){
 
 		let Specialization
-		let roleHandler
+		let roleImgSrc
 		try {
 			Specialization = (this.props.spec.name)
 		} 
@@ -16,18 +16,59 @@ class Roster extends Component{
 		}	
 
 		try {
-			roleHandler = this.props.spec.role
 			if (this.props.spec.role === 'HEALING')
-				roleHandler = 'Healer'
+				roleImgSrc = 'uiHealer.png'
 			else if (this.props.spec.role === 'DPS')
-				roleHandler = 'Damage'
+				roleImgSrc = 'uiDps.png'
 			else 
-				roleHandler = 'Tank'
+				roleImgSrc = 'uiTank.png'
 		} 
 		catch (error){
 			if (error instanceof TypeError)
-				roleHandler = 'Error'
+				roleImgSrc = ' '
 		}
+		let characterClass
+		switch(this.props.class){
+			case 1:
+				characterClass = 'Warrior'
+				break
+			case 2: 
+				characterClass = 'Paladin'
+				break
+			case 3:
+				characterClass = 'Hunter'
+				break
+			case 4:
+				characterClass = 'Rogue'
+				break
+			case 5:
+				characterClass = 'Priest'
+				break
+			case 6:
+				characterClass = 'Death Knight'
+				break
+			case 7:
+				characterClass = 'Shaman'
+				break
+			case 8:
+				characterClass = 'Mage'
+				break
+			case 9:
+				characterClass = 'Warlock'
+				break
+			case 10:
+				characterClass = 'Monk'
+				break	
+			case 11:
+				characterClass = 'Druid'
+				break
+			case 12:
+				characterClass = 'Demon Hunter'
+				break
+			default:
+				characterClass = 'Error'		
+		}
+
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
@@ -37,7 +78,8 @@ class Roster extends Component{
 					</div>
 					<span > <strong> {this.props.name} </strong> </span>
 					<span > {Specialization}</span>	
-					<span > {roleHandler}</span>
+					<span > {characterClass}</span>
+					<span> <img className = 'role-symbol' src = {roleImgSrc} alt = 'not found' style={{height: 55, width: 55}} /> </span>
 				</div>
 			);
 	}
