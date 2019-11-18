@@ -15,16 +15,17 @@ class Roster extends Component{
 		}	
 
 		try {
+			roleImgSrc = null
 			if (this.props.spec.role === 'HEALING')
-				roleImgSrc = 'uiHealer.png'
+				roleImgSrc = 1
 			else if (this.props.spec.role === 'DPS')
-				roleImgSrc = 'uiDps.PNG'
+				roleImgSrc = 2
 			else 
-				roleImgSrc = 'uiTank.PNG'
+				roleImgSrc = 3
 		} 
 		catch (error){
 			if (error instanceof TypeError)
-				roleImgSrc = ' '
+				roleImgSrc = 'error'
 		}
 		let characterClass
 		switch(this.props.class){
@@ -78,7 +79,9 @@ class Roster extends Component{
 					<span > <strong> {this.props.name} </strong> </span>
 					<span > {Specialization}</span>	
 					<span > {characterClass}</span>
-					<span> <img className = 'role-symbol' src = {roleImgSrc} alt = 'not found' style={{height: 55, width: 55}} /> </span>
+					{roleImgSrc === 1 ? <div className = 'Healer'>  </div>: roleImgSrc === 2? <div className = 'Dps'> </div> :roleImgSrc === 3? <div className = 'Tank'> </div>: null}
+					
+		
 				</div>
 			);
 	}

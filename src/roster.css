@@ -27,10 +27,33 @@
 	filter: brightness(1.2);
 }
 
+.Dps{
+	background-image: url('uiDps.PNG');
+	background-repeat: no-repeat;
+	margin: auto;
+	height: 70px;
+	width: 70px;
+}
+
+.Healer{
+	background-image: url('uiHealer.png');
+	background-repeat: no-repeat;
+	margin: auto;
+	height: 70px;
+	width: 60px;
+}
+
+.Tank{
+	background-image: url('uiTank.PNG');
+	background-repeat: no-repeat;
+	margin: auto;
+	height: 70px;
+	width: 60px;
+}
+
 .img-container{
 	width: 100%;
 	margin-top: 5px;
-	filter: brightness(.75);
 }
 
 span{
@@ -45,7 +68,7 @@ span{
 }
 
 .character-img{
-		filter: brightness(.75);
+		filter: brightness(.90);
 	}
 
 @media (max-width: 800px) {
