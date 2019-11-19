@@ -35,9 +35,9 @@ class editedApp extends Component{
   }
 
   render(){ 
-    let oldarr = this.state.raider
-    let updatedArr = oldarr.filter(arr =>arr.rank !== 2 && arr.rank < 5)
-    let newArr = updatedArr.map( (item, index) => 
+    let oldArray = this.state.raider
+    let filteredArray = oldArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+    let finalArray = filteredArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
               spec = {item.character.spec}
@@ -50,7 +50,7 @@ class editedApp extends Component{
             <div >
 
               {/* this div is part of the ternary operator*/}
-              {newArr}
+              {finalArray}
             </div>
           }
     </div>);
