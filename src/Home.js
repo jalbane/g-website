@@ -7,7 +7,10 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Rankings from './Rankings'
 import './home.css'
+import ReactGA from 'react-ga'
 
+ReactGA.initialize('UA-152946505-1')
+ReactGA.pageview(window.location.pathname + window.location.search)
 class Home extends Component{
   constructor(props){
     super(props)

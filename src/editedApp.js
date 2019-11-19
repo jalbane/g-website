@@ -3,7 +3,10 @@ import Roster from './Roster'
 import './editedApp.css';
 import 'tachyons';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ReactGA from 'react-ga'
 
+ReactGA.initialize('UA-152946505-1')
+ReactGA.pageview(window.location.pathname + window.location.search)
 class editedApp extends Component{
   constructor(props){
     super(props)
