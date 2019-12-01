@@ -22,8 +22,7 @@ class Home extends Component{
 	render(){
 	return(
 		<HashRouter history="browserHistory">	     
-      
-        <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'minHeight': '120px', 'fontSize': '24px', 'width': '100%'}}>
+      <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'minHeight': '120px', 'fontSize': '24px', 'width': '100%'}}>
           <Navbar.Brand style = {{'margin':15,'fontSize': '24px'}}>NFA</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -38,16 +37,11 @@ class Home extends Component{
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-		    <Route exact path = "/"  component = {Rankings}/> 
+        <Route exact path = "/"  component = {Rankings}/> 
         <Route path = "/editedApp" component = {editedApp}/>
-
-      
 		</HashRouter>  
-		
-    );
+  );
 	}
 }
 
 export default Home;
-
-/*{this.state.rankingsVisit ? null: ( <Route path = "/Rankings.js" component = {Rankings} exact />,  this.setState({homeVisit: false}), this.setState({rankingsVisit: true})) }*/
