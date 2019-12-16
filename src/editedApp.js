@@ -40,7 +40,8 @@ class editedApp extends Component{
   render(){ 
     let oldArray = this.state.raider
     let filteredArray = oldArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-    let finalArray = filteredArray.map( (item, index) => 
+    let sortedArray = filteredArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
+    let finalArray = sortedArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
               spec = {item.character.spec}
