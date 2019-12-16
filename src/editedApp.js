@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Roster from './Roster'
+import Roster from './Roster';
 import './editedApp.css';
 import 'tachyons';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import ReactGA from 'react-ga'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-152946505-1')
 ReactGA.pageview(window.location.pathname + window.location.search)
@@ -40,19 +40,20 @@ class editedApp extends Component{
   render(){ 
     let oldArray = this.state.raider
     let filteredArray = oldArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-    let sortedArray = filteredArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
+    let sortedArray = filteredArray.sort( (a,b) => a.character.spec.role.localeCompare(b.character.spec.role))
     let finalArray = sortedArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
               spec = {item.character.spec}
               class = {item.character.class}
+              key = {index}
+             
       />)
-    return (
-      
+    finalArray.reverse()
+    return ( 
       <div className="App">
           {this.state.loading ? <div className = 'loading-banner'><h1>Loading...</h1></div>: 
             <div >
-
               {/* this div is part of the ternary operator*/}
               {finalArray}
             </div>

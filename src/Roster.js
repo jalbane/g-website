@@ -3,7 +3,6 @@ import './roster.css'
 
 class Roster extends Component{
 	render(){
-
 		let Specialization
 		let roleImgSrc
 		try {
@@ -80,8 +79,6 @@ class Roster extends Component{
 					<span > {Specialization}</span>	
 					<span > {characterClass}</span>
 					{roleImgSrc === 1 ? <div className = 'Healer'>  </div>: roleImgSrc === 2? <div className = 'Dps'> </div> :roleImgSrc === 3? <div className = 'Tank'> </div>: null}
-					
-		
 				</div>
 			);
 	}
