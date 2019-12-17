@@ -12,3 +12,6 @@ What's coming next:
     I do like the idea of having their role displayed so you can see the team composition, but I'd like to replace it with an icon that
     stands out much more. (~~Proposed 11/16/19~~ Added 11/17/19)
     - [View before changes](https://gifyu.com/image/vvD1)
+    
+  - Added functionality to sort and re-display the guild roster by different parameters
+    - Added 12/17/19
