@@ -17,7 +17,7 @@
 }
 
 .Dps{
-	background-image: url('uiDps.PNG');
+	background-image: url('uiDps.png');
 	background-repeat: no-repeat;
 	margin: auto;
 	height: 70px;
@@ -33,7 +33,7 @@
 }
 
 .Tank{
-	background-image: url('uiTank.PNG');
+	background-image: url('uiTank.png');
 	background-repeat: no-repeat;
 	margin: auto;
 	height: 70px;
@@ -57,5 +57,5 @@ span{
 }
 
 .character-img{
-		filter: brightness(.95);
+	filter: brightness(.95);
 }

@@ -23,13 +23,13 @@ class Home extends Component{
 	return(
 		<HashRouter history="browserHistory">	     
       <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'minHeight': '120px', 'fontSize': '24px', 'width': '100%'}}>
-          <Navbar.Brand style = {{'margin':15,'fontSize': '24px'}}>NFA</Navbar.Brand>
+          <Navbar.Brand style = {{'margin': 15, 'fontSize': '24px'}}>NFA</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <NavLink to="/" style = {{'margin':15, 'color': 'black', 'textDecoration': 'none'}}><div className = 'selection'>Rankings</div></NavLink>   
-              <NavLink to="/editedApp" style = {{'margin':15, 'color': 'black', 'textDecoration': 'none'}}><div className = 'selection'>Roster</div></NavLink>
-              <NavDropdown style = {{'margin':'auto'}} title="Additional Links" id="basic-nav-dropdown">   
+              <NavLink to="/" activeStyle={{'textDecoration': 'none'}}><div className = 'selection'>Rankings</div></NavLink>   
+              <NavLink to="/editedApp" activeStyle={{'textDecoration': 'none'}}><div className = 'selection'>Roster</div></NavLink>
+              <NavDropdown style = {{'margin': 15,}} title="Additional Links" id="basic-nav-dropdown">   
                 <NavDropdown.Item href="https://raider.io/guilds/us/lightbringer/NFA" target = "_blank">Raider.io</NavDropdown.Item>
                 <NavDropdown.Item href="https://www.wowprogress.com/guild/us/lightbringer/NFA" target = "_blank">Wow progress</NavDropdown.Item>
                 <NavDropdown.Item href="https://www.warcraftlogs.com/guild/id/357706" target = "_blank">Warcraft logs</NavDropdown.Item>
@@ -38,7 +38,7 @@ class Home extends Component{
           </Navbar.Collapse>
         </Navbar>
         <Route exact path = "/"  component = {Rankings}/> 
-        <Route path = "/editedApp" component = {editedApp}/>
+        <Route exact path = "/editedApp" component = {editedApp}/>
 		</HashRouter>  
   );
 	}

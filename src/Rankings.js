@@ -1,6 +1,7 @@
 import React from 'react'
 import './rankings.css'
 import Rankingslist from './Rankingslist'
+import * as serviceWorker from './serviceWorker';
 
 class Rankings extends React.Component{
 	constructor(props){
@@ -89,3 +90,4 @@ class Rankings extends React.Component{
 }
 
 export default Rankings;
+serviceWorker.register();
