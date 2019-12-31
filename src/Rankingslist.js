@@ -2,8 +2,7 @@ import React from 'react'
 import './rankingslist.css'
 
 class Rankingslist extends React.Component{
-	render(){
-		
+	render(){	
 		return (
 			<div className = 'rankings-row'>
 				<span className ='rankings-cell'> <h5> {this.props.raidSummary.displayName} </h5> </span>
