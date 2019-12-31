@@ -3,10 +3,6 @@
   background-image: url('https://images5.alphacoders.com/881/thumb-1920-881376.jpg');
   background-repeat: no-repeat;
   background-color: black;
-  /* why is a non-zero padding value fixing 
-    a gap in the bg-color between navbar
-    and table?
-  */
 }
 
 .App-logo {
@@ -35,8 +31,7 @@
 }
 
 .buttonContainer{
-  margin: 10px 0px 0px 0px;
-  display: inline-block;
+  margin: auto;
   height: 50px;
   width: 35%;
   background-color: rgb(248,249,250);
@@ -64,7 +59,6 @@
 }
 
 .sortMessage{
-  text-align: left;
   margin-left: 35px;
 }
 
@@ -197,8 +191,8 @@
     height: 45px;
     width: 100%;
     background-color: rgb(248,249,250);
-    vertical-align: top;
-    font-size: 16px;
+    vertical-align: middle;
+    font-size: 12px;
     border: 2px solid black;
     box-shadow: black 1px 1px 1px;
     border-radius: 8px;
@@ -207,16 +201,16 @@
   .sortMessage{
     text-align: left;
     margin-left: 35px;
-    vertical-align: top;
+    vertical-align: middle;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
   .sortButton{
     border: none;
     box-sizing: border-box;
     background-color: rgb(248,249,250);
     color: black;
-    font-size: 14px;
+    font-size: 12px;
     height: 25px;
     width: 20%;
     vertical-align: top;
