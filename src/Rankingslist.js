@@ -1,5 +1,5 @@
-import React from 'react'
-import './rankingslist.css'
+import React from 'react';
+import './rankingslist.css';
 
 class Rankingslist extends React.Component{
 	render(){	
@@ -14,4 +14,4 @@ class Rankingslist extends React.Component{
 	}
 }
 
-export default Rankingslist
+export default Rankingslist;
