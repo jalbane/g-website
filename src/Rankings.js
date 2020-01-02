@@ -72,6 +72,7 @@ class Rankings extends React.Component{
 	let data = this.state
 	return (
 			<div className = 'rankings-page'> 
+				<div className = 'title-cell'> <h4> No Fun Allowed - Lightbringer (US) </h4> </div>
 				<div className = 'rankings-container'>
 					<div className = 'rankings-row'>
 						<span className ='rankings-cell'> <h4> Raid Name </h4></span>
