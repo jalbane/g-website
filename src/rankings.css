@@ -7,7 +7,7 @@
 	background-color: none;
 	position: relative;
 	border: 1px solid black;
-	box-shadow: 10px 10px 10px;
+	box-shadow: 5px 5px 5px;
 }
 
 .rankings-page{
@@ -28,8 +28,25 @@
 	border-bottom-color: black; 
 }
 
+.title-cell{
+	background-color:#d8d8d8;
+	display: table;
+	border: 1px solid black;
+	border-bottom: none;
+	width: 40%;
+	margin: auto;
+	top: 10%;
+	position: relative;
+	text-align: center;
+	box-shadow: 5px 5px 5px;
+}
+
 @media (max-width: 440px) {
 	h4{
+		font-size: 1.25em;
+	}
+	.title-cell{
+		width: 75%;
 		font-size: 1.25em;
 	}
 	.rankings-container{
@@ -46,6 +63,10 @@
 	h4{
 		font-size: 1em;
 	}
+	.title-cell{
+		width: 75%;
+		font-size: 1em;
+	}
 	.rankings-container{
 		margin: auto;
 		width: 75%;
@@ -60,7 +81,10 @@
 	h4{
 		font-size: 1.25em;
 	}
-
+	.title-cell{
+		width: 75%;
+		font-size: 1.25em;
+	}
 	.rankings-container{
 		margin: auto;
 		width: 75%;
@@ -75,7 +99,10 @@
 	h4{
 		font-size: 1.125em;
 	}
-
+	.title-cell{
+		width: 75%;
+		font-size: 1.125em;
+	}
 	.rankings-container{
 		margin: auto;
 		width: 75%;
@@ -88,14 +115,16 @@
 
 @media (max-width: 1050px) {
 	h4{
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
-
+	.title-cell{
+		font-size: 1.3em;
+		width: 75%;
+	}
 	.rankings-container{
 		margin: auto;
 		width: 75%;
 		height: 35%;
-
 		display: table;
 		background-color: none;
 		position: relative;

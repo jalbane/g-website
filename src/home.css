@@ -1,29 +1,31 @@
 .selection{
 	color: black;
 	cursor: pointer;
-	text-align: left;
-	margin: 15px;
-	margin-top: 22px;
+	text-align: center;
+	margin: 22px 15px 15px;
 }
 
-.selectionRoster:link {
+.selection:link {
 	text-decoration: none;
 }
 
 /* visited link */
 .selection:visited {
-
+	text-decoration: none;
 }
 
 /* mouse over link */
 .selection:hover {
-	text-decoration: none;
-	border: none;
 	background-color: rgba(216,216,216, .86);
+}
+
+.selection:focus {
+	text-decoration: none;
 }
 
 /* selected link */
 .selection:active {
-	text-decoration: none !important;
+	text-decoration: none;
 	background-color: rgba(216,216,216, .86);
 }
+

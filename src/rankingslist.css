@@ -36,6 +36,9 @@
 		background-color: none;
 		position: relative;
 	}
+	.title-cell{
+		width: 95%;
+	}
 	.rankings-cell{
 		font-size: 1em;
 	}
@@ -44,6 +47,9 @@
 @media (max-width: 330px) {
 	h4, h5{
 		font-size: .75em;
+	}
+	.title-cell{
+		width: 95%;
 	}
 	.rankings-container{
 		font-size: .75em;
@@ -62,6 +68,10 @@
 @media (max-width: 600px) {
 	h4, h5{
 		font-size: 1em;
+	}
+	.title-cell{
+		width: 95%;
+		font-size: 1.25em;
 	}
 	.rankings-container{
 		margin: auto;
