@@ -27,8 +27,8 @@ class Home extends Component{
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <NavLink to="/" activeStyle={{'textDecoration': 'none'}}><div className = 'selection'>Rankings</div></NavLink>   
-              <NavLink to="/editedApp" activeStyle={{'textDecoration': 'none'}}><div className = 'selection'>Roster</div></NavLink>
+              <NavLink to="/" activeStyle = {{textDecoration: 'none'}}><div className = 'selection'>Rankings</div></NavLink>   
+              <NavLink to="/editedApp" style = {{textDecoration: 'none'}}><div className = 'selection'>Roster</div></NavLink>
               <NavDropdown style = {{'margin': 15,}} title="Additional Links" id="basic-nav-dropdown">   
                 <NavDropdown.Item href="https://raider.io/guilds/us/lightbringer/NFA" target = "_blank">Raider.io</NavDropdown.Item>
                 <NavDropdown.Item href="https://www.wowprogress.com/guild/us/lightbringer/NFA" target = "_blank">Wow progress</NavDropdown.Item>
@@ -38,7 +38,7 @@ class Home extends Component{
           </Navbar.Collapse>
         </Navbar>
         <Route exact path = "/"  component = {Rankings}/> 
-        <Route exact path = "/editedApp" component = {editedApp}/>
+        <Route path = "/editedApp" component = {editedApp}/>
 		</HashRouter>  
   );
 	}
