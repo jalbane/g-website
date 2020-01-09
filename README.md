@@ -1,6 +1,6 @@
-Rebuilding the website in my 'web-app' repository into a react app
+## Quick link to visit here: https://jalbane.github.io/g-website/
 
-Quick link to visit here: https://jalbane.github.io/g-website/
+Rebuilding the website in my 'web-app' repository into a react app
 
 What's coming next: 
 
