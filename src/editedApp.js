@@ -5,6 +5,7 @@ import 'tachyons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
 import * as serviceWorker from './serviceWorker';
+import Spinner from 'react-bootstrap/Spinner'
 
 ReactGA.initialize('UA-152946505-1')
 ReactGA.pageview(window.location.pathname + window.location.search)
@@ -60,8 +61,12 @@ class editedApp extends Component{
     return ( 
       <div className="App">
         
-          { this.state.loading 
-          ? <div className = 'loading-banner'><h1>Loading...</h1></div>
+          { this.state.loading
+          ?<div className = 'loading-banner'> 
+              <h1>Loading &nbsp;
+                <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
+              </h1>
+            </div>
           : 
           <div>
             <div className = 'buttonContainer'>
