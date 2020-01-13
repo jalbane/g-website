@@ -43,8 +43,9 @@ class editedApp extends Component{
 
     let intialArray, filteredArray, sortedArray, finalArray   
     intialArray = this.state.raider
-    filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+    filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5 && arr.character.name !== 'Romelus')
     sortedArray = filteredArray.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
+      
     finalArray = sortedArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
@@ -53,6 +54,15 @@ class editedApp extends Component{
               key = {index}  
               rank = {item.rank}
       />)
+    
+    /*finalArray = filteredArray.map( (item, index) => 
+      <Roster name= {item.character.name} 
+              tnail = {item.character.thumbnail} 
+              spec = {item.character.spec}
+              class = {item.character.class}
+              key = {index}  
+              rank = {item.rank}
+      />)*/
     this.setState({'filteredRaider': finalArray, loading: false})    
   }
 
@@ -102,7 +112,7 @@ class editedApp extends Component{
                   this.setState({'filteredRaider': finalArray})
                 }}> Role
                 </button>
-
+              
                 <button className = 'sortButton'
                 onClick = {() => {          
                   intialArray = this.state.raider
