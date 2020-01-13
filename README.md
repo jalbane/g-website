@@ -16,4 +16,4 @@ What's coming next:
   - Added functionality to sort and re-display the guild roster by different parameters
     - Added 12/17/19
     
-  - Fixed an issue with file name extensions that was preventing people who cloned this repository from being able to run it on localhost. 
+  - Fixed an issue with file name extensions that was preventing people who cloned this repository from being able to run it on localhost (1/12/20). 
