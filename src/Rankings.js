@@ -2,11 +2,13 @@ import React from 'react'
 import './rankings.css'
 import Rankingslist from './Rankingslist'
 import * as serviceWorker from './serviceWorker';
+import Spinner from 'react-bootstrap/Spinner'
 
 class Rankings extends React.Component{
 	constructor(props){
 	super(props)
 	this.state = {
+			loading: true,
 			bod: {
 
 			},
@@ -43,6 +45,7 @@ class Rankings extends React.Component{
 		this.fillRankings('bod', 'battle-of-dazaralor', data, dataRankings, 'Battle of Dazar\'alor')
 		this.fillRankings('cos', 'crucible-of-storms', data, dataRankings, 'Crucible of Storms')
 		this.fillRankings('tep', 'the-eternal-palace', data, dataRankings, 'Eternal Palace')
+		this.setState({loading: false})
 	}
 
 	fillRankings(name, longName, data, dataRankings, displayName){
@@ -71,21 +74,31 @@ class Rankings extends React.Component{
 	render(){
 	let data = this.state
 	return (
-			<div className = 'rankings-page'> 
-				<div className = 'title-cell'> <h4> No Fun Allowed - Lightbringer (US) </h4> </div>
-				<div className = 'rankings-container'>
-					<div className = 'rankings-row'>
-						<span className ='rankings-cell'> <h4> Raid Name </h4></span>
-		    			<span className ='rankings-cell'> <h4> Progress </h4> </span>
-		    			<span className ='rankings-cell'> <h4> Realm Ranking </h4> </span>
-		    			<span className ='rankings-cell'> <h4> World Ranking </h4> </span>
-	    			</div>
-		    		<Rankingslist raidSummary = {data.uldir} />
-		    		<Rankingslist raidSummary = {data.bod} />
-		    		<Rankingslist raidSummary = {data.cos} />
-		    		<Rankingslist raidSummary = {data.tep} />
-				</div>
-			</div>
+			<div>
+				{this.state.loading
+					? <div className = 'loading-banner-home'> 
+			              <h1 style = {{width: '100%', marginLeft: '45%'}}>Loading &nbsp;
+			                <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
+			              </h1>
+			            </div>
+			        : <div className = 'rankings-page'>
+			        	<div className = 'title-cell'> <h4> No Fun Allowed - Lightbringer (US) </h4> </div>
+						<div className = 'rankings-container'>
+							<div className = 'rankings-row'>
+								<span className ='rankings-cell'> <h4> Raid Name </h4></span>
+				    			<span className ='rankings-cell'> <h4> Progress </h4> </span>
+				    			<span className ='rankings-cell'> <h4> Realm Ranking </h4> </span>
+				    			<span className ='rankings-cell'> <h4> World Ranking </h4> </span>
+			    			</div>
+				    		<Rankingslist raidSummary = {data.uldir} />
+				    		<Rankingslist raidSummary = {data.bod} />
+				    		<Rankingslist raidSummary = {data.cos} />
+				    		<Rankingslist raidSummary = {data.tep} />
+						</div>
+					  </div>
+			    }
+			</div>	
+	
 		);
 	}
 }
