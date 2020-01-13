@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/g-website/static/css/main.950269d0.chunk.css",
+    "main.css": "/g-website/static/css/main.0d7502b3.chunk.css",
     "main.js": "/g-website/static/js/main.a3385247.chunk.js",
     "main.js.map": "/g-website/static/js/main.a3385247.chunk.js.map",
     "runtime-main.js": "/g-website/static/js/runtime-main.5e7b19d5.js",
@@ -9,17 +9,17 @@
     "static/js/2.cd96ad7e.chunk.js": "/g-website/static/js/2.cd96ad7e.chunk.js",
     "static/js/2.cd96ad7e.chunk.js.map": "/g-website/static/js/2.cd96ad7e.chunk.js.map",
     "index.html": "/g-website/index.html",
-    "precache-manifest.ff112f57fd1ca6a2336e39551fed5a79.js": "/g-website/precache-manifest.ff112f57fd1ca6a2336e39551fed5a79.js",
+    "precache-manifest.70a1250827b6849dc628b05be573b2a1.js": "/g-website/precache-manifest.70a1250827b6849dc628b05be573b2a1.js",
     "service-worker.js": "/g-website/service-worker.js",
     "static/css/2.26892fd8.chunk.css.map": "/g-website/static/css/2.26892fd8.chunk.css.map",
-    "static/css/main.950269d0.chunk.css.map": "/g-website/static/css/main.950269d0.chunk.css.map",
+    "static/css/main.0d7502b3.chunk.css.map": "/g-website/static/css/main.0d7502b3.chunk.css.map",
     "static/media/roster.css": "/g-website/static/media/questframe.8450f097.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5e7b19d5.js",
     "static/css/2.26892fd8.chunk.css",
     "static/js/2.cd96ad7e.chunk.js",
-    "static/css/main.950269d0.chunk.css",
+    "static/css/main.0d7502b3.chunk.css",
     "static/js/main.a3385247.chunk.js"
   ]
 }
