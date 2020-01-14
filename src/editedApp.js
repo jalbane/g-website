@@ -5,7 +5,7 @@ import 'tachyons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
 import * as serviceWorker from './serviceWorker';
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
 
 ReactGA.initialize('UA-152946505-1')
 ReactGA.pageview(window.location.pathname + window.location.search)
@@ -41,12 +41,10 @@ class editedApp extends Component{
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
 
-    let intialArray, filteredArray, sortedArray, finalArray, refinedFilter
-    intialArray = this.state.raider
-    filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-    refinedFilter = filteredArray.filter( arr => arr.character.spec !== undefined )
-    sortedArray = refinedFilter.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
-    finalArray = sortedArray.map( (item, index) => 
+    let rosterArray = this.state.raider
+    rosterArray = rosterArray.filter( arr => arr.rank !== 2 && arr.rank < 5 && arr.character.spec !== undefined)
+    rosterArray = rosterArray.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
+    rosterArray = rosterArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
               spec = {item.character.spec}
@@ -54,94 +52,92 @@ class editedApp extends Component{
               key = {index}  
               rank = {item.rank}
       />)
-    this.setState({'filteredRaider': finalArray, loading: false})    
+    this.setState({'filteredRaider': rosterArray, loading: false})    
   }
 
   render(){ 
-    let intialArray, filteredArray, sortedArray, finalArray, refinedFilter  
+    let rosterArray
     return ( 
       <div className="App">
-        
-          { this.state.loading
-          ?<div className = 'loading-banner'> 
+        { this.state.loading
+          ? <div className = 'loading-banner'> 
               <h1>Loading &nbsp;
                 <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
               </h1>
             </div>
-          : 
-          <div>
-            <div className = 'buttonContainer'>
-              <p className= 'sortMessage'> Sort by: 
-              <button className = 'sortButton'
-                onClick = {() => {
-                  intialArray = this.state.raider
-                  filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-                  sortedArray = filteredArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
-                  finalArray = sortedArray.map( (item, index) => 
-                  <Roster name= {item.character.name} 
-                          tnail = {item.character.thumbnail} 
-                          spec = {item.character.spec}
-                          class = {item.character.class}
-                          key = {index}  
-                  />)
-                this.setState({'filteredRaider': finalArray})
-                }}> Name 
-                </button>
+          : <div>
+              <div className = 'buttonContainer'>
+                <p className= 'sortMessage'> Sort by: 
+                <button className = 'sortButton'
+                  onClick = {() => {
+                    rosterArray = this.state.raider
+                    rosterArray = rosterArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+                    rosterArray = rosterArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
+                    rosterArray = rosterArray.map( (item, index) => 
+                    <Roster name= {item.character.name} 
+                            tnail = {item.character.thumbnail} 
+                            spec = {item.character.spec}
+                            class = {item.character.class}
+                            key = {index}  
+                    />)
+                  this.setState({'filteredRaider': rosterArray})
+                  }}> Name 
+                  </button>
 
-                <button className = 'sortButton'
-                onClick = {() => {
-                  intialArray = this.state.raider
-                  filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-                  refinedFilter = filteredArray.filter( arr => arr.character.spec !== undefined )
-                  sortedArray = refinedFilter.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
-                  finalArray = sortedArray.map( (item, index) => 
-                  <Roster name= {item.character.name} 
-                          tnail = {item.character.thumbnail} 
-                          spec = {item.character.spec}
-                          class = {item.character.class}
-                          key = {index}  
-                  />)
-                  this.setState({'filteredRaider': finalArray})
-                }}> Role
-                </button>
-              
-                <button className = 'sortButton'
-                onClick = {() => {          
-                  intialArray = this.state.raider
-                  filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-                  sortedArray = filteredArray.sort( (a,b) => a.rank - b.rank)
-                  finalArray = sortedArray.map( (item, index) => 
-                  <Roster name= {item.character.name} 
-                          tnail = {item.character.thumbnail} 
-                          spec = {item.character.spec}
-                          class = {item.character.class}
-                          key = {index}  
-                  />)
-                  this.setState({'filteredRaider': finalArray})
-                }}> Guild Rank
-                </button>
-                <button className = 'sortButton'
-                onClick = {() => {
-                  intialArray = this.state.raider
-                  filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-                  sortedArray = filteredArray.sort( (a,b) => a.character.class - b.character.class)
-                  finalArray = sortedArray.map( (item, index) => 
-                  <Roster name= {item.character.name} 
-                          tnail = {item.character.thumbnail} 
-                          spec = {item.character.spec}
-                          class = {item.character.class}
-                          key = {index}  
-                  />)
-                this.setState({'filteredRaider': finalArray})
-                }}> Class 
-                </button>
-              </p> 
+                  <button className = 'sortButton'
+                  onClick = {() => {
+                    rosterArray = this.state.raider
+                    rosterArray = rosterArray.filter( arr => arr.rank !== 2 && arr.rank < 5 && arr.character.spec !== undefined)
+                    rosterArray = rosterArray.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
+                    rosterArray = rosterArray.map( (item, index) => 
+                    <Roster name= {item.character.name} 
+                            tnail = {item.character.thumbnail} 
+                            spec = {item.character.spec}
+                            class = {item.character.class}
+                            key = {index}  
+                    />)
+                    this.setState({'filteredRaider': rosterArray})
+                  }}> Role
+                  </button>
+                
+                  <button className = 'sortButton'
+                  onClick = {() => {          
+                    rosterArray = this.state.raider
+                    rosterArray = rosterArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+                    rosterArray = rosterArray.sort( (a,b) => a.rank - b.rank)
+                    rosterArray = rosterArray.map( (item, index) => 
+                    <Roster name= {item.character.name} 
+                            tnail = {item.character.thumbnail} 
+                            spec = {item.character.spec}
+                            class = {item.character.class}
+                            key = {index}  
+                    />)
+                    this.setState({'filteredRaider': rosterArray})
+                  }}> Guild Rank
+                  </button>
+                  <button className = 'sortButton'
+                  onClick = {() => {
+                    rosterArray = this.state.raider
+                    rosterArray = rosterArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+                    rosterArray = rosterArray.sort( (a,b) => a.character.class - b.character.class)
+                    rosterArray = rosterArray.map( (item, index) => 
+                    <Roster name= {item.character.name} 
+                            tnail = {item.character.thumbnail} 
+                            spec = {item.character.spec}
+                            class = {item.character.class}
+                            key = {index}  
+                    />)
+                  this.setState({'filteredRaider': rosterArray})
+                  }}> Class 
+                  </button>
+                </p> 
+              </div>
+              {/* this div is part of the ternary operator*/}
+              {this.state.filteredRaider}
             </div>
-            {/* this div is part of the ternary operator*/}
-            {this.state.filteredRaider}
-          </div>
-          }
-      </div>);
+        }
+      </div>
+    );
   }
 }
 export default editedApp;
