@@ -41,10 +41,11 @@ class editedApp extends Component{
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
 
-    let intialArray, filteredArray, sortedArray, finalArray   
+    let intialArray, filteredArray, sortedArray, finalArray, refinedFilter
     intialArray = this.state.raider
-    filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5 && arr.character.name !== 'Romelus')
-    sortedArray = filteredArray.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))  
+    filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
+    refinedFilter = filteredArray.filter( arr => arr.character.spec !== undefined )
+    sortedArray = refinedFilter.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
     finalArray = sortedArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.thumbnail} 
@@ -57,7 +58,7 @@ class editedApp extends Component{
   }
 
   render(){ 
-    let intialArray, filteredArray, sortedArray, finalArray   
+    let intialArray, filteredArray, sortedArray, finalArray, refinedFilter  
     return ( 
       <div className="App">
         
@@ -91,7 +92,8 @@ class editedApp extends Component{
                 onClick = {() => {
                   intialArray = this.state.raider
                   filteredArray = intialArray.filter( arr => arr.rank !== 2 && arr.rank < 5)
-                  sortedArray = filteredArray.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
+                  refinedFilter = filteredArray.filter( arr => arr.character.spec !== undefined )
+                  sortedArray = refinedFilter.sort( (a,b) => b.character.spec.role.localeCompare(a.character.spec.role))
                   finalArray = sortedArray.map( (item, index) => 
                   <Roster name= {item.character.name} 
                           tnail = {item.character.thumbnail} 

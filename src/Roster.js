@@ -10,21 +10,20 @@ class Roster extends Component{
 		} 
 		catch (error){
 			if (error instanceof TypeError)
-				  Specialization = `Error`
+				  Specialization = 'Error'
 		}	
 
 		try {
-			roleImgSrc = null
 			if (this.props.spec.role === 'HEALING')
 				roleImgSrc = 1
 			else if (this.props.spec.role === 'DPS')
 				roleImgSrc = 2
-			else 
+			else
 				roleImgSrc = 3
 		} 
 		catch (error){
 			if (error instanceof TypeError)
-				roleImgSrc = 'error'
+				roleImgSrc = null
 		}
 		let characterClass
 		switch(this.props.class){
@@ -78,7 +77,13 @@ class Roster extends Component{
 					<span > <strong> {this.props.name} </strong> </span>
 					<span > {Specialization}</span>	
 					<span > {characterClass}</span>
-					{roleImgSrc === 1 ? <div className = 'Healer'>  </div>: roleImgSrc === 2? <div className = 'Dps'> </div> :roleImgSrc === 3? <div className = 'Tank'> </div>: null}
+					{roleImgSrc === 1 
+						? <div className = 'Healer'>  </div>
+						: roleImgSrc === 2
+						? <div className = 'Dps'> </div> 
+						:roleImgSrc === 3
+						? <div className = 'Tank'> </div>
+						: null}
 				</div>
 			);
 	}
