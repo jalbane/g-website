@@ -50,9 +50,10 @@ class Rankings extends React.Component{
 
 	fillRankings(name, longName, data, dataRankings, displayName){
 		if (name === 'cos'){
+			console.log( data.raid_progression[longName].summary.split(' '))
 			this.setState( { [name]: 
 						{
-							displayName: [displayName],
+							displayName: displayName,
 							summary: data.raid_progression[longName].summary,
 							world: dataRankings.raid_rankings[longName].heroic.world,
 							realm: dataRankings.raid_rankings[longName].heroic.realm
@@ -60,9 +61,9 @@ class Rankings extends React.Component{
 					 })
 		}
 		else{
-		this.setState( { [name]: 
+			this.setState( { [name]: 
 						{
-							displayName: [displayName],
+							displayName: displayName,
 							summary: data.raid_progression[longName].summary,
 							world: dataRankings.raid_rankings[longName].mythic.world,
 							realm: dataRankings.raid_rankings[longName].mythic.realm
