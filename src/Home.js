@@ -22,7 +22,7 @@ class Home extends Component{
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-center" defaultActiveKey = "/">
               <NavLink to="/" ><Button style = {{'fontSize': '24px', margin: 15, marginTop: 22}} variant = 'outline-dark' size = 'md'> Rankings  </Button></NavLink>   
-              <NavLink to="/editedApp"><Button style = {{'fontSize': '24px', margin: 15, marginTop: 22}}variant = 'outline-dark' size = 'md'> Roster  </Button></NavLink>
+              <NavLink to="/Roster"><Button style = {{'fontSize': '24px', margin: 15, marginTop: 22}}variant = 'outline-dark' size = 'md'> Roster  </Button></NavLink>
               <NavDropdown style = {{marginTop: 22}} title="Additional Links">   
                 <NavDropdown.Item href="https://raider.io/guilds/us/lightbringer/NFA" target = "_blank">Raider.io</NavDropdown.Item>
                 <NavDropdown.Item href="https://www.wowprogress.com/guild/us/lightbringer/NFA" target = "_blank">Wow progress</NavDropdown.Item>
@@ -32,7 +32,7 @@ class Home extends Component{
           </Navbar.Collapse>
         </Navbar>
         <Route exact path = "/"  component = {Rankings}/> 
-        <Route path = "/editedApp" component = {editedApp}/>
+        <Route path = "/Roster" component = {editedApp}/>
 		</HashRouter>  
   );
 	}

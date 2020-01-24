@@ -42,6 +42,7 @@ class editedApp extends Component{
     let url = 'https://us.api.blizzard.com/wow/guild/Lightbringer/NFA?fields=members&locale=en_US&access_token='
     url += this.state.blizzResponse
     await fetch(url)
+
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
 
