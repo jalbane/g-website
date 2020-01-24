@@ -45,12 +45,26 @@ class Rankings extends React.Component{
 		this.fillRankings('bod', 'battle-of-dazaralor', data, dataRankings, 'Battle of Dazar\'alor')
 		this.fillRankings('cos', 'crucible-of-storms', data, dataRankings, 'Crucible of Storms')
 		this.fillRankings('tep', 'the-eternal-palace', data, dataRankings, 'Eternal Palace')
+		this.fillRankings('nwc', 'nyalotha-the-waking-city', data, dataRankings, 'Ny\'alotha, the Waking City')
 		this.setState({loading: false})
 	}
 
 	fillRankings(name, longName, data, dataRankings, displayName){
-		if (name === 'cos'){
-			console.log( data.raid_progression[longName].summary.split(' '))
+		let mythicProg, heroicProg, normalProg;
+		mythicProg = data.raid_progression[longName].mythic_bosses_killed;
+		heroicProg = data.raid_progression[longName].heroic_bosses_killed;
+		normalProg = data.raid_progression[longName].normal_bosses_killed
+		if (mythicProg >= 1){
+			this.setState( { [name]: 
+						{
+							displayName: displayName,
+							summary: data.raid_progression[longName].summary,
+							world: dataRankings.raid_rankings[longName].mythic.world,
+							realm: dataRankings.raid_rankings[longName].mythic.realm
+						}
+					 })
+		}
+		else if (heroicProg >= 1){
 			this.setState( { [name]: 
 						{
 							displayName: displayName,
@@ -60,13 +74,23 @@ class Rankings extends React.Component{
 						}
 					 })
 		}
-		else{
+		else if (normalProg >= 1){
 			this.setState( { [name]: 
 						{
 							displayName: displayName,
 							summary: data.raid_progression[longName].summary,
-							world: dataRankings.raid_rankings[longName].mythic.world,
-							realm: dataRankings.raid_rankings[longName].mythic.realm
+							world: dataRankings.raid_rankings[longName].normal.world,
+							realm: dataRankings.raid_rankings[longName].normal.realm
+						}
+					 })
+		}
+		else {
+			this.setState( { [name]: 
+						{
+							displayName: displayName,
+							summary: 'N/A',
+							world: 'N/A',
+							realm: 'N/A'
 						}
 					 })
 		}
@@ -95,6 +119,7 @@ class Rankings extends React.Component{
 				    		<Rankingslist raidSummary = {data.bod} />
 				    		<Rankingslist raidSummary = {data.cos} />
 				    		<Rankingslist raidSummary = {data.tep} />
+				    		<Rankingslist raidSummary = {data.nwc} />
 						</div>
 					  </div>
 			    }
