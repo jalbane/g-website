@@ -29,6 +29,7 @@ class Roster extends Component{
 
 		let characterClass
 		switch(this.props.class){
+
 			case 1:
 				characterClass = 'Warrior'
 				break
@@ -68,13 +69,13 @@ class Roster extends Component{
 			default:
 				characterClass = 'Error'		
 		}
-		let insetImg = this.props.tnail.replace('-avatar', '-inset')
+		//let insetImg = this.props.tnail.replace('-avatar', '-inset')
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
-						<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+						{/*<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
 							<img className = 'character-img' src = {`https://render-us.worldofwarcraft.com/character/${insetImg}`} alt = '' /> 
-						</a> 
+						</a>*/} 
 					</div>
 					<span > <strong> {this.props.name} </strong> </span>
 					<span > {Specialization}</span>	
