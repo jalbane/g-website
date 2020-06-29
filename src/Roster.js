@@ -5,7 +5,10 @@ class Roster extends Component{
 	render(){
 		let Specialization
 		let roleImgSrc
-
+		/*
+		
+		******** Player specialization and role have been removed from the API.
+				 My original design/template no longer displays correctly
 		try {
 			Specialization = (this.props.spec.name)
 		} 
@@ -14,6 +17,8 @@ class Roster extends Component{
 				Specialization = 'Error'
 		}	
 
+		
+		
 		try {
 			if (this.props.spec.role === 'HEALING')
 				roleImgSrc = 1
@@ -26,7 +31,7 @@ class Roster extends Component{
 			if (error instanceof TypeError)
 				roleImgSrc = null
 		}
-
+		*/
 		let characterClass
 		switch(this.props.class){
 
@@ -73,20 +78,25 @@ class Roster extends Component{
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
-						{/*<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<img className = 'character-img' src = {`https://render-us.worldofwarcraft.com/character/${insetImg}`} alt = '' /> 
-						</a>*/} 
+						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+							<img className = 'character-img' src = {`https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-inset.jpg`} /> 
+						//</a>
+
+					} 
 					</div>
 					<span > <strong> {this.props.name} </strong> </span>
-					<span > {Specialization}</span>	
+					{/*<span > Specialization</span>	*/}
 					<span > {characterClass}</span>
-					{roleImgSrc === 1 
+					{ roleImgSrc === 1 
 						? <div className = 'Healer'></div>
 						: roleImgSrc === 2
 						? <div className = 'Dps'></div> 
 						:roleImgSrc === 3
 						? <div className = 'Tank'></div>
-						: null}
+						: null
+						?roleImgSrc === null
+						: <div ></div>
+					}
 				</div>
 			);
 	}

@@ -45,20 +45,20 @@ class editedApp extends Component{
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
 
+    console.log(this.state.raider)
     let rosterArray = this.state.raider
     rosterArray = rosterArray.filter( arr => arr.rank < 4) /*&& arr.character.spec !== undefined*/
-    rosterArray = rosterArray.sort( (a,b) => a.playable_class < (b.playable_class))
+    rosterArray = rosterArray.sort( (a,b) => a.character.playable_class.id - b.character.playable_class.id)
     rosterArray = rosterArray.map( (item, index) => 
       <Roster name= {item.character.name} 
-              /*tnail = {item.character.thumbnail} 
-              spec = {item.character.spec}*/
+              tnail = {item.character.id} 
+              /*spec = {item.character.spec}*/
               class = {item.character.playable_class.id}
               key = {index}  
               rank = {item.rank}
       />)
     
-    this.setState({ ['filteredRaider']: rosterArray, loading: false})    
-    console.log(this.state.raider[0])
+    this.setState({ ['filteredRaider']: rosterArray, loading: false})  
   }
 
   render(){ 
@@ -78,14 +78,13 @@ class editedApp extends Component{
                 <span className = 'sortTab'> Sort By: </span>
                   <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}
                     onClick = {() => {
-                      rosterArray = this.state.raider
-                      rosterArray = rosterArray.filter( arr => arr.rank < 4)
-                      rosterArray = rosterArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
+                      rosterArray = this.state.filteredRaider
+                      rosterArray = rosterArray.sort( (a,b) => a.props.name.localeCompare(b.props.name))
                       rosterArray = rosterArray.map( (item, index) => 
-                      <Roster name= {item.character.name} 
-                              /*tnail = {item.character.thumbnail} 
-                              spec = {item.character.spec}*/
-                              class = {item.character.playable_class.id}
+                      <Roster name= {item.props.name} 
+                              tnail = {item.props.id} 
+                              /*spec = {item.character.spec}*/
+                              class = {item.props.class}
                               key = {index}    
                       />)
                     this.setState({'filteredRaider': rosterArray})
@@ -118,8 +117,8 @@ class editedApp extends Component{
                         rosterArray = rosterArray.sort( (a,b) => a.rank - b.rank)
                         rosterArray = rosterArray.map( (item, index) => 
                         <Roster name= {item.character.name} 
-                                /*tnail = {item.character.thumbnail} 
-                                spec = {item.character.spec}*/
+                                tnail = {item.character.id} 
+                                /*spec = {item.character.spec}*/
                                 class = {item.character.playable_class.id}
                                 key = {index}  
                         />)
@@ -131,11 +130,11 @@ class editedApp extends Component{
                       onClick = {() => {
                         rosterArray = this.state.raider
                         rosterArray = rosterArray.filter( arr => arr.rank < 4)
-                        rosterArray = rosterArray.sort( (a,b) => a.playable_class < (b.playable_class))
+                        rosterArray = rosterArray.sort( (a,b) => a.character.playable_class.id - (b.character.playable_class.id))
                         rosterArray = rosterArray.map( (item, index) => 
                         <Roster name= {item.character.name} 
-                                /*tnail = {item.character.thumbnail} 
-                                spec = {item.character.spec}*/
+                                tnail = {item.character.thumbnail} 
+                                /*spec = {item.character.spec}*/
                                 class = {item.character.playable_class.id}
                                 key = {index}  
                       />)
