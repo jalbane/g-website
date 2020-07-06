@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HashRouter, Route, NavLink} from 'react-router-dom';
-import editedApp from './editedApp';
+import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -32,7 +32,7 @@ class Home extends Component{
           </Navbar.Collapse>
         </Navbar>
         <Route exact path = "/"  component = {Rankings}/> 
-        <Route path = "/Roster" component = {editedApp}/>
+        <Route path = "/Roster" component = {App}/>
 		</HashRouter>  
   );
 	}
