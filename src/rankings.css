@@ -41,13 +41,13 @@
 	box-shadow: 5px 5px 5px;
 }
 
-@media (max-width: 440px) {
+@media screen and (max-width: 440px) {
 	h4{
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	.title-cell{
 		width: 75%;
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	.rankings-container{
 		margin: auto;
@@ -59,7 +59,7 @@
 	}
 }
 
-@media (max-width: 330px) {
+@media screen and (max-width: 330px) {
 	h4{
 		font-size: 1em;
 	}
@@ -77,7 +77,7 @@
 	}	
 }
 
-@media (max-width: 620px) {
+@media screen and (max-width: 620px) {
 	h4{
 		font-size: 1.25em;
 	}
@@ -95,7 +95,7 @@
 	}
 }
 
-@media (max-width: 850px) {
+@media screen and (max-width: 850px) {
 	h4{
 		font-size: 1.125em;
 	}
@@ -113,7 +113,7 @@
 	}
 }
 
-@media (max-width: 1050px) {
+@media screen and(max-width: 1050px) {
 	h4{
 		font-size: 1.3em;
 	}

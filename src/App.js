@@ -5,7 +5,6 @@ import 'tachyons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
 import * as serviceWorker from './serviceWorker';
-import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 /*import ListGroup from 'react-bootstrap/ListGroup';*/
@@ -67,11 +66,16 @@ class App extends Component{
       <div className="App">
         { this.state.loading
           ? <div className = 'loading-banner'> 
-              <h1>Loading &nbsp;
-                <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
-              </h1>
+              {//<h1>Loading &nbsp;
+                //<Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>  
+              //</h1>
+              }
+              <div className = "loading">
+                <Roster name = {''} class = {13} loading = {this.state.loading}/>
+                <Roster name = {''} class = {13} loading = {this.state.loading}/>
+              </div>
             </div>
-          :<div> 
+          :<div className = 'rosterDisplay'> 
             <div className = 'buttongrp'>
               <ButtonGroup size = 'lg'>
                 <span className = 'sortTab'> Sort By: </span>

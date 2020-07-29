@@ -3,7 +3,6 @@ import './roster.css'
 
 class Roster extends Component{
 	render(){
-		let Specialization
 		let roleImgSrc
 		/*
 		
@@ -71,15 +70,46 @@ class Roster extends Component{
 			case 12:
 				characterClass = 'Demon Hunter'
 				break
+			case 13:
+				characterClass = ''
+				break
 			default:
 				characterClass = 'Error'		
 		}
 		//let insetImg = this.props.tnail.replace('-avatar', '-inset')
+		if (this.props.loading){
+			return (
+			<div className = 'shimmerLoad'>
+					<div className = 'character-container'>
+					<div className = 'img-container'> 
+						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+							<div className = "img-span">  </div> 
+						//</a>
+
+					} 
+					</div>
+					<span className = "text-span"> <strong> {this.props.name} </strong> </span>
+					{/*<span > Specialization</span>	*/}
+					<span className = "text-span"> {characterClass}</span>
+					{ roleImgSrc === 1 
+						? <div className = 'Healer'></div>
+						: roleImgSrc === 2
+						? <div className = 'Dps'></div> 
+						:roleImgSrc === 3
+						? <div className = 'Tank'></div>
+						: null
+						?roleImgSrc === null
+						: <div ></div>
+					}
+				</div>
+			</div>
+			)
+		}
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
 						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<img className = 'character-img' src = {`https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-inset.jpg`} /> 
+							<img className = 'character-img' alt = 'error' src = {`https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-inset.jpg`} /> 
 						//</a>
 
 					} 
