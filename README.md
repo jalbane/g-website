@@ -17,3 +17,5 @@ What's coming next:
     - Added 12/17/19
     
   - Fixed an issue with file name extensions that was preventing people who cloned this repository from being able to run it on localhost (1/12/20). 
+  
+  - Known Issue: Blizzards overhaul of their API is currently causing difficulties with individual character renders. I've put a placeholder image in for each character on the roster page.
