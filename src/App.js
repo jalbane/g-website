@@ -21,6 +21,9 @@ class App extends Component{
       raider: [
 
       ],
+      raiderRender: [
+
+      ],
       filteredRaider: [
 
       ]
@@ -38,11 +41,19 @@ class App extends Component{
     })
     let data = await response.json()
     this.setState({blizzResponse: data.access_token})
-    let url = 'https://us.api.blizzard.com/data/wow/guild/lightbringer/nfa/roster?namespace=profile-us&locale=en_US&access_token='
+    let url = 'https://us.api.blizzard.com/data/wow/guild/stormrage/nfa/roster?namespace=profile-us&locale=en_US&access_token='
     url += this.state.blizzResponse
     await fetch(url)
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
+    console.log(this.state.raider)
+    
+    /*url = 'https://us.api.blizzard.com/profile/wow/character/lightbringer/kildrin/character-media?namespace=profile-us&locale=en_US&access_token='
+    url += this.state.blizzResponse
+    await fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data))*/
+    //.then(data => this.setState( {[`raiderRender`]: assets}))
 
     let rosterArray = this.state.raider
     rosterArray = rosterArray.filter( arr => arr.rank < 4) /*&& arr.character.spec !== undefined*/
@@ -50,13 +61,15 @@ class App extends Component{
     rosterArray = rosterArray.map( (item, index) => 
       <Roster name= {item.character.name} 
               tnail = {item.character.id} 
-              /*spec = {item.character.spec}*/
+              spec = {item.character.spec}
               class = {item.character.playable_class.id}
               key = {index}  
               rank = {item.rank}
+              blizzResponse = {this.state.blizzResponse}
       />)
     
     this.setState({ 'filteredRaider': rosterArray, loading: false})  
+    //console.log(this.state.raider)
   }
 
   render(){ 
@@ -86,7 +99,7 @@ class App extends Component{
                       rosterArray = rosterArray.map( (item, index) => 
                       <Roster name= {item.props.name} 
                               tnail = {item.props.id} 
-                              /*spec = {item.character.spec}*/
+                              //spec = {item.character.spec}
                               class = {item.props.class}
                               key = {index}    
                       />)
@@ -95,7 +108,7 @@ class App extends Component{
                       Name 
                   </Button>
 
-                  {/*   ----- Role API endpoint has been removed or currently being remodeled -------
+                  {/*   ----- Role API endpoint has been removed or currently being changed -------
                   <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}
                     onClick = {() => {
                       rosterArray = this.state.raider

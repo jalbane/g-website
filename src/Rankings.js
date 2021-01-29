@@ -25,9 +25,9 @@ class Rankings extends React.Component{
 	}
 
 	async componentDidMount(){
-		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=Lightbringer&name=NFA&fields=raid_progression')
+		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=Stormrage&name=NFA&fields=raid_progression')
 		let data = await response.json()
-	
+		console.log(data)
 		/*********		Replaced by function fillSummary 	***********
 						fillSummary replaced by fillRankings
 			 ------ 	something like this can also be done	---------- 
@@ -38,14 +38,11 @@ class Rankings extends React.Component{
 			})
 		*/
 
-		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=lightbringer&name=nfa&fields=raid_rankings')
+		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=Stormrage&name=nfa&fields=raid_rankings')
 		let dataRankings = await response.json()
 
-		this.fillRankings('uldir', 'uldir', data, dataRankings, 'Uldir')
-		this.fillRankings('bod', 'battle-of-dazaralor', data, dataRankings, 'Battle of Dazar\'alor')
-		this.fillRankings('cos', 'crucible-of-storms', data, dataRankings, 'Crucible of Storms')
-		this.fillRankings('tep', 'the-eternal-palace', data, dataRankings, 'Eternal Palace')
-		this.fillRankings('nwc', 'nyalotha-the-waking-city', data, dataRankings, 'Ny\'alotha, the Waking City')
+		this.fillRankings('castlenathria', 'castle-nathria', data, dataRankings, 'Castle Nathria')
+		
 		this.setState({loading: false})
 	}
 
@@ -115,11 +112,8 @@ class Rankings extends React.Component{
 				    			<span className ='rankings-cell'> <h4> Realm Ranking </h4> </span>
 				    			<span className ='rankings-cell'> <h4> World Ranking </h4> </span>
 			    			</div>
-				    		<Rankingslist raidSummary = {data.uldir} />
-				    		<Rankingslist raidSummary = {data.bod} />
-				    		<Rankingslist raidSummary = {data.cos} />
-				    		<Rankingslist raidSummary = {data.tep} />
-				    		<Rankingslist raidSummary = {data.nwc} />
+				    		<Rankingslist raidSummary = {data.castlenathria} />
+				    		
 						</div>
 					  </div>
 			    }

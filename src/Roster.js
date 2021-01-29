@@ -2,14 +2,27 @@ import React, {Component} from 'react';
 import './roster.css'
 
 class Roster extends Component{
+	/*async renderCharacter(){
+		let image
+		let url = 'https://us.api.blizzard.com/profile/wow/character/lightbringer/kildrin/character-media?namespace=profile-us&locale=en_US&access_token='
+    	url += this.props.blizzResponse
+    	await fetch(url)
+    		.then(response => response.json())
+    		.then(data => {image = data.assets[1].value})
+    	return (
+    		<img src = {image} alt = 'error'/>
+    	);
+	}*/
+
 	render(){
 		let roleImgSrc
+		let Specialization
 		/*
 		
 		******** Player specialization and role have been removed from the API.
-				 My original design/template no longer displays correctly
+				 My original design/template no longer displays correctly*/
 		try {
-			Specialization = (this.props.spec.name)
+			Specialization = (this.props.spec)
 		} 
 		catch (error){
 			if (error instanceof TypeError)
@@ -30,7 +43,7 @@ class Roster extends Component{
 			if (error instanceof TypeError)
 				roleImgSrc = null
 		}
-		*/
+		
 		let characterClass
 		switch(this.props.class){
 
@@ -84,7 +97,7 @@ class Roster extends Component{
 					<div className = 'img-container'> 
 						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
 							<div className = "img-span">  </div> 
-						//</a>
+						//<a>
 
 					} 
 					</div>
@@ -108,14 +121,17 @@ class Roster extends Component{
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
-						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<img className = 'character-img' alt = 'error' src = {`https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-inset.jpg`} /> 
-						//</a>
+						
+						{<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+							<img alt = 'error' src = 'https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-avatar.jpg' />
+							{/*this.renderCharacter()*/}
+						</a>
+						
 
 					} 
 					</div>
 					<span > <strong> {this.props.name} </strong> </span>
-					{/*<span > Specialization</span>	*/}
+					{<span > {Specialization}</span>	}
 					<span > {characterClass}</span>
 					{ roleImgSrc === 1 
 						? <div className = 'Healer'></div>

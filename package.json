@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.6.0",
     "dependencies": "0.0.1",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "^16.14.0",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.2.0",
@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "gh-pages": "^2.2.0"
   }
 }
