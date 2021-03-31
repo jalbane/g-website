@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 /*import ListGroup from 'react-bootstrap/ListGroup';*/
+import Spinner from 'react-bootstrap/Spinner'
 
 ReactGA.initialize('UA-152946505-1')
 ReactGA.pageview(window.location.pathname + window.location.search)
@@ -21,12 +22,12 @@ class App extends Component{
       raider: [
 
       ],
-      raiderRender: [
-
-      ],
       filteredRaider: [
 
+      ],
+      img:[
       ]
+      
     };
   }
 
@@ -41,35 +42,55 @@ class App extends Component{
     })
     let data = await response.json()
     this.setState({blizzResponse: data.access_token})
-    let url = 'https://us.api.blizzard.com/data/wow/guild/stormrage/nfa/roster?namespace=profile-us&locale=en_US&access_token='
+    let url = 'https://us.api.blizzard.com/data/wow/guild/lightbringer/no-skill/roster?namespace=profile-us&locale=en_US&access_token='
     url += this.state.blizzResponse
     await fetch(url)
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
+
+  
+    
+  
+    /* filter raid roster size */
+    let array = this.state.raider
+    console.log(array)
+    array = array.filter ( arr => arr.rank < 6)
+    array = array.filter (arr => arr.character.name !== 'Blinkerbell' && arr.character.name !== 'Rollindeep' && arr.character.name !== 'Reptard' && arr.character.name !== 'Bawlzak')
+    array = array.map ( arr => {
+      arr.character.asset_id = 0
+      return arr
+    })
+
+    this.setState({ ['raider']: array})
     console.log(this.state.raider)
     
-    /*url = 'https://us.api.blizzard.com/profile/wow/character/lightbringer/kildrin/character-media?namespace=profile-us&locale=en_US&access_token='
-    url += this.state.blizzResponse
-    await fetch(url)
-    .then(response => response.json())
-    .then(data => console.log(data))*/
-    //.then(data => this.setState( {[`raiderRender`]: assets}))
+    /* attempt to add asset id to state */
+    let index = 0 
+    let img_array = new Array()
+    while (index < this.state.raider.length){
+      url = `https://us.api.blizzard.com/profile/wow/character/lightbringer/${this.state.raider[index++].character.name.toLowerCase()}/character-media?namespace=profile-us&locale=en_US&access_token=${this.state.blizzResponse}`
+      await fetch(url)
+        .then(response => response.json())
+        .then(asd => img_array.push(asd.assets[0].value))
+    }
+    this.setState({['img']: img_array})
+    
+
+    array = array.map( (arr, index) => arr.character.asset_id = this.state.img[index])
 
     let rosterArray = this.state.raider
-    rosterArray = rosterArray.filter( arr => arr.rank < 4) /*&& arr.character.spec !== undefined*/
+    rosterArray = rosterArray.filter( arr => arr.rank < 6) /*&& arr.character.spec !== undefined*/
     rosterArray = rosterArray.sort( (a,b) => a.character.playable_class.id - b.character.playable_class.id)
     rosterArray = rosterArray.map( (item, index) => 
-      <Roster name= {item.character.name} 
-              tnail = {item.character.id} 
-              spec = {item.character.spec}
+    <Roster name = {item.character.name} 
+              id = {item.character.id} 
+              tnail = {item.character.asset_id}
               class = {item.character.playable_class.id}
               key = {index}  
               rank = {item.rank}
               blizzResponse = {this.state.blizzResponse}
-      />)
-    
-    this.setState({ 'filteredRaider': rosterArray, loading: false})  
-    //console.log(this.state.raider)
+    />)
+    this.setState({ 'filteredRaider': rosterArray, loading: false})   
   }
 
   render(){ 
@@ -84,6 +105,9 @@ class App extends Component{
               //</h1>
               }
               <div className = "loading">
+                <h1 style = {{width: '100%', color: 'White'}}>Loading &nbsp;
+                      <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
+                </h1>
                 <Roster name = {''} class = {13} loading = {this.state.loading}/>
                 <Roster name = {''} class = {13} loading = {this.state.loading}/>
               </div>
@@ -94,13 +118,14 @@ class App extends Component{
                 <span className = 'sortTab'> Sort By: </span>
                   <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}
                     onClick = {() => {
-                      rosterArray = this.state.filteredRaider
-                      rosterArray = rosterArray.sort( (a,b) => a.props.name.localeCompare(b.props.name))
+                      rosterArray = this.state.raider
+                      rosterArray = rosterArray.sort( (a,b) => a.character.name.localeCompare(b.character.name))
+                      console.log(rosterArray)
                       rosterArray = rosterArray.map( (item, index) => 
-                      <Roster name= {item.props.name} 
-                              tnail = {item.props.id} 
-                              //spec = {item.character.spec}
-                              class = {item.props.class}
+                      <Roster name= {item.character.name} 
+                              id = {item.character.id} 
+                              tnail = {item.character.asset_id}
+                              class = {item.character.playable_class.id}
                               key = {index}    
                       />)
                       this.setState({'filteredRaider': rosterArray})
@@ -130,11 +155,12 @@ class App extends Component{
                     <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}
                       onClick = {() => {          
                         rosterArray = this.state.raider
-                        rosterArray = rosterArray.filter( arr => arr.rank < 4)
+                        rosterArray = rosterArray.filter( arr => arr.rank < 6)
                         rosterArray = rosterArray.sort( (a,b) => a.rank - b.rank)
                         rosterArray = rosterArray.map( (item, index) => 
                         <Roster name= {item.character.name} 
-                                tnail = {item.character.id} 
+                                id = {item.character.id} 
+                                tnail = {item.character.asset_id}
                                 /*spec = {item.character.spec}*/
                                 class = {item.character.playable_class.id}
                                 key = {index}  
@@ -146,11 +172,12 @@ class App extends Component{
                     <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}
                       onClick = {() => {
                         rosterArray = this.state.raider
-                        rosterArray = rosterArray.filter( arr => arr.rank < 4)
+                        rosterArray = rosterArray.filter( arr => arr.rank < 6)
                         rosterArray = rosterArray.sort( (a,b) => a.character.playable_class.id - (b.character.playable_class.id))
                         rosterArray = rosterArray.map( (item, index) => 
                         <Roster name= {item.character.name} 
-                                tnail = {item.character.thumbnail} 
+                                id = {item.character.id} 
+                                tnail = {item.character.asset_id}
                                 /*spec = {item.character.spec}*/
                                 class = {item.character.playable_class.id}
                                 key = {index}  

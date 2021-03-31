@@ -1,7 +1,7 @@
 .character-container{
 	display: inline-grid;
 	margin: 60px;
-	height: 275px;
+	height: 245px;
 	width: 160px;
 	color: black;
 	font-size: 1.12em;
@@ -16,7 +16,7 @@
 	height: 60%;
 	margin-top: 5px;
 	margin: auto;
-	background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+	background: linear-gradient(to right, #e8be78 4%, #dbbe8f 25%, #e0bc82 36%);
 	border-radius: 4px;
 	box-shadow: 0px 2px 5px;
 	display: block;
@@ -27,7 +27,7 @@
 	width: 91%;
 	filter: brightness(.95);
 	border-radius: 10px;
-	background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+	background: linear-gradient(to right, #e8be78 4%, #dbbe8f 25%, #e0bc82 36%);
 	height: 73px;
 	box-shadow: 0px 2px 5px;
 }

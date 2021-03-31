@@ -25,7 +25,7 @@ class Rankings extends React.Component{
 	}
 
 	async componentDidMount(){
-		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=Stormrage&name=NFA&fields=raid_progression')
+		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=Lightbringer&name=No%20Skill&fields=raid_progression')
 		let data = await response.json()
 		console.log(data)
 		/*********		Replaced by function fillSummary 	***********
@@ -38,7 +38,7 @@ class Rankings extends React.Component{
 			})
 		*/
 
-		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=Stormrage&name=nfa&fields=raid_rankings')
+		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=Lightbringer&name=No%20Skill&fields=raid_rankings')
 		let dataRankings = await response.json()
 
 		this.fillRankings('castlenathria', 'castle-nathria', data, dataRankings, 'Castle Nathria')

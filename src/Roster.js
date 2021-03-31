@@ -2,17 +2,12 @@ import React, {Component} from 'react';
 import './roster.css'
 
 class Roster extends Component{
-	/*async renderCharacter(){
-		let image
-		let url = 'https://us.api.blizzard.com/profile/wow/character/lightbringer/kildrin/character-media?namespace=profile-us&locale=en_US&access_token='
-    	url += this.props.blizzResponse
-    	await fetch(url)
-    		.then(response => response.json())
-    		.then(data => {image = data.assets[1].value})
-    	return (
-    		<img src = {image} alt = 'error'/>
-    	);
-	}*/
+  constructor(props){
+    super(props)
+    this.state = {
+    	image: []
+    };
+  }
 
 	render(){
 		let roleImgSrc
@@ -43,7 +38,6 @@ class Roster extends Component{
 			if (error instanceof TypeError)
 				roleImgSrc = null
 		}
-		
 		let characterClass
 		switch(this.props.class){
 
@@ -92,46 +86,41 @@ class Roster extends Component{
 		//let insetImg = this.props.tnail.replace('-avatar', '-inset')
 		if (this.props.loading){
 			return (
-			<div className = 'shimmerLoad'>
-					<div className = 'character-container'>
-					<div className = 'img-container'> 
-						{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<div className = "img-span">  </div> 
-						//<a>
-
-					} 
+				<div className = 'shimmerLoad'>
+						<div className = 'character-container'>
+						<div className = 'img-container'> 
+							{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+								<div className = "img-span">  </div> 
+							//<a>
+							} 
+						</div>
+						<span className = "text-span"> <strong> {this.props.name} </strong> </span>
+						{/*<span > Specialization</span>	*/}
+						<span className = "text-span"> {characterClass}</span>
+						{ roleImgSrc === 1 
+							? <div className = 'Healer'></div>
+							: roleImgSrc === 2
+							? <div className = 'Dps'></div> 
+							:roleImgSrc === 3
+							? <div className = 'Tank'></div>
+							: null
+							?roleImgSrc === null
+							: <div ></div>
+						}
 					</div>
-					<span className = "text-span"> <strong> {this.props.name} </strong> </span>
-					{/*<span > Specialization</span>	*/}
-					<span className = "text-span"> {characterClass}</span>
-					{ roleImgSrc === 1 
-						? <div className = 'Healer'></div>
-						: roleImgSrc === 2
-						? <div className = 'Dps'></div> 
-						:roleImgSrc === 3
-						? <div className = 'Tank'></div>
-						: null
-						?roleImgSrc === null
-						: <div ></div>
-					}
 				</div>
-			</div>
 			)
 		}
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
-						
 						{<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
-							<img alt = 'error' src = 'https://render-us.worldofwarcraft.com/character/lightbringer/84/149240148-avatar.jpg' />
-							{/*this.renderCharacter()*/}
+							<img alt = "error" src = {this.props.tnail} />
 						</a>
-						
-
 					} 
 					</div>
 					<span > <strong> {this.props.name} </strong> </span>
-					{<span > {Specialization}</span>	}
+					{/*<span > {Specialization}</span>*/	}
 					<span > {characterClass}</span>
 					{ roleImgSrc === 1 
 						? <div className = 'Healer'></div>
