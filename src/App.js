@@ -42,7 +42,7 @@ class App extends Component{
     })
     let data = await response.json()
     this.setState({blizzResponse: data.access_token})
-    let url = 'https://us.api.blizzard.com/data/wow/guild/lightbringer/no-skill/roster?namespace=profile-us&locale=en_US&access_token='
+    let url = 'https://us.api.blizzard.com/data/wow/guild/sargeras/no-skill/roster?namespace=profile-us&locale=en_US&access_token='
     url += this.state.blizzResponse
     await fetch(url)
     .then(response => response.json())
@@ -68,7 +68,7 @@ class App extends Component{
     let index = 0 
     let img_array = new Array()
     while (index < this.state.raider.length){
-      url = `https://us.api.blizzard.com/profile/wow/character/lightbringer/${this.state.raider[index++].character.name.toLowerCase()}/character-media?namespace=profile-us&locale=en_US&access_token=${this.state.blizzResponse}`
+      url = `https://us.api.blizzard.com/profile/wow/character/sargeras/${this.state.raider[index++].character.name.toLowerCase()}/character-media?namespace=profile-us&locale=en_US&access_token=${this.state.blizzResponse}`
       await fetch(url)
         .then(response => response.json())
         .then(asd => img_array.push(asd.assets[0].value))

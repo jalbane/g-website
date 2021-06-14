@@ -17,16 +17,16 @@ class Home extends Component{
 	return(
 		<HashRouter history="browserHistory">	     
       <Navbar className = 'main-bar'bg="light" expand="lg" style = {{'textAlign': 'center', 'minHeight': '120px', 'fontSize': '24px', 'width': '100%'}}>
-          <Navbar.Brand style = {{'fontSize': '24px'}}>NFA</Navbar.Brand>
+          <Navbar.Brand style = {{'fontSize': '24px'}}>No Skill</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-center" defaultActiveKey = "/">
               <NavLink to="/" ><Button style = {{'fontSize': '24px', margin: 15, marginTop: 22}} variant = 'outline-dark' size = 'md'> Rankings  </Button></NavLink>   
               <NavLink to="/Roster"><Button style = {{'fontSize': '24px', margin: 15, marginTop: 22}}variant = 'outline-dark' size = 'md'> Roster  </Button></NavLink>
               <NavDropdown style = {{marginTop: 22}} title="Additional Links">   
-                <NavDropdown.Item href="https://raider.io/guilds/us/lightbringer/NFA" target = "_blank">Raider.io</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.wowprogress.com/guild/us/lightbringer/NFA" target = "_blank">Wow progress</NavDropdown.Item>
-                <NavDropdown.Item href="https://www.warcraftlogs.com/guild/id/357706" target = "_blank">Warcraft logs</NavDropdown.Item>
+                <NavDropdown.Item href="https://raider.io/guilds/us/sargeras/No%20Skill" target = "_blank">Raider.io</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.wowprogress.com/guild/us/sargeras/No%20Skill" target = "_blank">Wow progress</NavDropdown.Item>
+                <NavDropdown.Item href="https://www.warcraftlogs.com/guild/us/sargeras/no%20skill" target = "_blank">Warcraft logs</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

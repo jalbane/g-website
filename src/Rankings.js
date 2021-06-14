@@ -9,23 +9,11 @@ class Rankings extends React.Component{
 	super(props)
 	this.state = {
 			loading: true,
-			bod: {
-
-			},
-			uldir: {
-
-			},
-			cos: {
-
-			},
-			tep: {
-
-			}
 		}
 	}
 
 	async componentDidMount(){
-		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=Lightbringer&name=No%20Skill&fields=raid_progression')
+		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=sargeras&name=No%20Skill&fields=raid_progression')
 		let data = await response.json()
 		console.log(data)
 		/*********		Replaced by function fillSummary 	***********
@@ -38,7 +26,7 @@ class Rankings extends React.Component{
 			})
 		*/
 
-		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=Lightbringer&name=No%20Skill&fields=raid_rankings')
+		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=sargeras&name=No%20Skill&fields=raid_rankings')
 		let dataRankings = await response.json()
 
 		this.fillRankings('castlenathria', 'castle-nathria', data, dataRankings, 'Castle Nathria')
@@ -104,7 +92,7 @@ class Rankings extends React.Component{
 			              </h1>
 			            </div>
 			        : <div className = 'rankings-page'>
-			        	<div className = 'title-cell'> <h4> No Fun Allowed - Lightbringer (US) </h4> </div>
+			        	<div className = 'title-cell'> <h4> No Skill - Sargeras (US) </h4> </div>
 						<div className = 'rankings-container'>
 							<div className = 'rankings-row'>
 								<span className ='rankings-cell'> <h4> Raid Name </h4></span>

@@ -89,7 +89,7 @@ class Roster extends Component{
 				<div className = 'shimmerLoad'>
 						<div className = 'character-container'>
 						<div className = 'img-container'> 
-							{//<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+							{//<a id = "redirect" href = {`https://raider.io/characters/us/sargeras/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
 								<div className = "img-span">  </div> 
 							//<a>
 							} 
@@ -114,7 +114,7 @@ class Roster extends Component{
 		return (
 				<div className = 'character-container'>
 					<div className = 'img-container'> 
-						{<a id = "redirect" href = {`https://raider.io/characters/us/lightbringer/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
+						{<a id = "redirect" href = {`https://raider.io/characters/us/sargeras/${this.props.name}`} target = "_blank" rel="noopener noreferrer" >
 							<img alt = "error" src = {this.props.tnail} />
 						</a>
 					} 
