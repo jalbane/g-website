@@ -53,7 +53,7 @@ class App extends Component{
   
     /* filter raid roster size */
     let array = this.state.raider
-    console.log(array)
+    //console.log(array)
     array = array.filter ( arr => arr.rank < 6)
     array = array.filter (arr => arr.character.name !== 'Blinkerbell' && arr.character.name !== 'Rollindeep' && arr.character.name !== 'Reptard' && arr.character.name !== 'Bawlzak')
     array = array.map ( arr => {
@@ -61,19 +61,19 @@ class App extends Component{
       return arr
     })
 
-    this.setState({ ['raider']: array})
-    console.log(this.state.raider)
+    this.setState({ 'raider': array})
+    //console.log(this.state.raider)
     
     /* attempt to add asset id to state */
     let index = 0 
-    let img_array = new Array()
+    let img_array = []
     while (index < this.state.raider.length){
       url = `https://us.api.blizzard.com/profile/wow/character/sargeras/${this.state.raider[index++].character.name.toLowerCase()}/character-media?namespace=profile-us&locale=en_US&access_token=${this.state.blizzResponse}`
       await fetch(url)
         .then(response => response.json())
         .then(asd => img_array.push(asd.assets[0].value))
     }
-    this.setState({['img']: img_array})
+    this.setState({'img': img_array})
     
 
     array = array.map( (arr, index) => arr.character.asset_id = this.state.img[index])

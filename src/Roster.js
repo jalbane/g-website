@@ -11,11 +11,11 @@ class Roster extends Component{
 
 	render(){
 		let roleImgSrc
-		let Specialization
+		//let Specialization
 		/*
 		
 		******** Player specialization and role have been removed from the API.
-				 My original design/template no longer displays correctly*/
+				 My original design/template no longer displays correctly
 		try {
 			Specialization = (this.props.spec)
 		} 
@@ -23,8 +23,7 @@ class Roster extends Component{
 			if (error instanceof TypeError)
 				Specialization = 'Error'
 		}	
-
-		
+		*/
 		
 		try {
 			if (this.props.spec.role === 'HEALING')

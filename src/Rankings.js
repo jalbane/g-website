@@ -15,7 +15,7 @@ class Rankings extends React.Component{
 	async componentDidMount(){
 		let response= await fetch('https://raider.io/api/v1/guilds/profile?region=US&realm=sargeras&name=No%20Skill&fields=raid_progression')
 		let data = await response.json()
-		console.log(data)
+		//console.log(data)
 		/*********		Replaced by function fillSummary 	***********
 						fillSummary replaced by fillRankings
 			 ------ 	something like this can also be done	---------- 
