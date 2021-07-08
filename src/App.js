@@ -48,9 +48,6 @@ class App extends Component{
     .then(response => response.json())
     .then(data => this.setState( {[`raider`]: data.members}))
 
-  
-    
-  
     /* filter raid roster size */
     let array = this.state.raider
     //console.log(array)
@@ -75,7 +72,6 @@ class App extends Component{
     }
     this.setState({'img': img_array})
     
-
     array = array.map( (arr, index) => arr.character.asset_id = this.state.img[index])
 
     let rosterArray = this.state.raider
@@ -98,6 +94,8 @@ class App extends Component{
 
     return ( 
       <div className="App">
+        {/*begin ternary operator*/}
+        
         { this.state.loading
           ? <div className = 'loading-banner'> 
               {//<h1>Loading &nbsp;
@@ -105,7 +103,7 @@ class App extends Component{
               //</h1>
               }
               <div className = "loading">
-                <h1 style = {{width: '100%', color: 'White'}}>Loading &nbsp;
+                <h1 style = {{width: '100%', color: 'Black'}}>Loading &nbsp;
                       <Spinner style = {{marginBottom: 5, fontSize: 12}} size = 'md' animation="border" role="status"></Spinner>
                 </h1>
                 <Roster name = {''} class = {13} loading = {this.state.loading}/>
@@ -113,7 +111,7 @@ class App extends Component{
               </div>
             </div>
           :<div className = 'rosterDisplay'> 
-            <div className = 'buttongrp'>
+          <div className = 'buttongrp'>
               <ButtonGroup size = 'lg'>
                 <span className = 'sortTab'> Sort By: </span>
                   <Button className = 'sortButton' variant = "light" style = {{width: 'auto'}}

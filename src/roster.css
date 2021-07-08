@@ -1,6 +1,6 @@
 .character-container{
 	display: inline-grid;
-	margin: 60px;
+	margin: 50px 62px;
 	height: 245px;
 	width: 160px;
 	color: black;
@@ -83,4 +83,17 @@ span{
 	filter: brightness(.95);
 	border-radius: 10px;
 	transition: linear 300ms;
+}
+
+@media screen and (max-width: 556px) {
+	.character-container{
+		margin: 50px 40px;
+	}
+}
+
+
+@media screen and (max-width: 280px) {
+	.character-container{
+		margin: 20px 0px;
+	}
 }

@@ -28,8 +28,8 @@ class Rankings extends React.Component{
 
 		response = await fetch('https://raider.io/api/v1/guilds/profile?region=us&realm=sargeras&name=No%20Skill&fields=raid_rankings')
 		let dataRankings = await response.json()
-
 		this.fillRankings('castlenathria', 'castle-nathria', data, dataRankings, 'Castle Nathria')
+		this.fillRankings('sanctumofdomination', 'sanctum-of-domination', data, dataRankings, 'Sanctum of Domination')
 		
 		this.setState({loading: false})
 	}
@@ -101,7 +101,7 @@ class Rankings extends React.Component{
 				    			<span className ='rankings-cell'> <h4> World Ranking </h4> </span>
 			    			</div>
 				    		<Rankingslist raidSummary = {data.castlenathria} />
-				    		
+				    		<Rankingslist raidSummary = {data.sanctumofdomination} />
 						</div>
 					  </div>
 			    }

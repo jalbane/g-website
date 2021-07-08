@@ -12,9 +12,15 @@
 
 .rankings-page{
 	height: 1000px;
-	background-image: url('https://images5.alphacoders.com/881/thumb-1920-881376.jpg');
+	/*background-image: url('https://images5.alphacoders.com/881/thumb-1920-881376.jpg');*/
 	background-repeat: no-repeat;
-	background-color: black;
+	background-color: whitesmoke;
+}
+
+.loading-banner-home{
+	position: absolute;
+	width: 100%;
+	background-color: none;
 }
 
 .rankings-cell{
